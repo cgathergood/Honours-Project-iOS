@@ -29,6 +29,7 @@
 		E4ED3D761AC0ACDE00310F5F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D751AC0ACDE00310F5F /* StoreKit.framework */; };
 		E4ED3D781AC0ACE600310F5F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D771AC0ACE600310F5F /* SystemConfiguration.framework */; };
 		E4ED3D7A1AC0ACF100310F5F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D791AC0ACF100310F5F /* libsqlite3.dylib */; };
+		E4ED3D811ACDA65500310F5F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D801ACDA65500310F5F /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		E4ED3D771AC0ACE600310F5F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E4ED3D791AC0ACF100310F5F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E4ED3D7B1AC0AD7E00310F5F /* Honours Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Honours Project-Bridging-Header.h"; sourceTree = "<group>"; };
+		E4ED3D801ACDA65500310F5F /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				E4ED3D3C1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld */,
 				E4ED3D381AC0AB4E00310F5F /* Supporting Files */,
 				E4ED3D7B1AC0AD7E00310F5F /* Honours Project-Bridging-Header.h */,
+				E4ED3D801ACDA65500310F5F /* SignUpViewController.swift */,
 			);
 			path = "Honours Project";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				E4ED3D401AC0AB4E00310F5F /* ViewController.swift in Sources */,
 				E4ED3D3E1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld in Sources */,
+				E4ED3D811ACDA65500310F5F /* SignUpViewController.swift in Sources */,
 				E4ED3D3B1AC0AB4E00310F5F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +488,7 @@
 				E4ED3D591AC0AB4E00310F5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4ED3D5A1AC0AB4E00310F5F /* Build configuration list for PBXNativeTarget "Honours ProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				E4ED3D5C1AC0AB4E00310F5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

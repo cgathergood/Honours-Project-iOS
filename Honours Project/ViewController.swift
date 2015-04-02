@@ -13,19 +13,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        Parse.setApplicationId("nFHu3bnj37q5vzWkItvJutUFOPMLwjC1HbiiAXiC", clientKey: "TO9nrLJAi0w7X9pipEMjf1XgftWgfkAnuKkdhq6e")
+       
         
-        var test = PFObject(className: "Test")
-        test.setObject("iOS", forKey: "OperatingSystem")
-        test.saveInBackgroundWithBlock{
-            (success: Bool!, error: NSError!) -> Void in
-            
-            if(success==true){
-                println("Parse Object created: \(test.objectId)")
-            } else {
-                println(error)
-            }
-        }
+//        var test = PFObject(className: "Test")
+//        test.setObject("iOS", forKey: "OperatingSystem")
+//        test.saveInBackgroundWithBlock{
+//            (success: Bool!, error: NSError!) -> Void in
+//            
+//            if(success==true){
+//                println("Parse Object created: \(test.objectId)")
+//            } else {
+//                println(error)
+//            }
+//        }
     }
     
     override func didReceiveMemoryWarning() {
