@@ -10,6 +10,8 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password1: UITextField!
     @IBOutlet weak var password2: UITextField!
@@ -31,7 +33,6 @@ class SignUpViewController: UIViewController {
             signupUser()
         }
         
-        
     }
     
     override func viewDidLoad() {
@@ -52,14 +53,27 @@ class SignUpViewController: UIViewController {
         user.username = username.text
         user.password = password1.text
         
+        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool!, error: NSError!) -> Void in
             if error == nil {
                 
+                self.activityIndicator.stopAnimating()
+                UIApplication.sharedApplication().endIgnoringInteractionEvents()
                 self.displayAlert("Success", message: "Thanks for signing up \(user.username)!")
                 
             } else {
+                
+                self.activityIndicator.stopAnimating()
+                UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                
                 if let errorString = error.userInfo?["error"] as? NSString {
                     userError = errorString
                 } else {
