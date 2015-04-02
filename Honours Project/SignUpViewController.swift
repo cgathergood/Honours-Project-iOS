@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var password1: UITextField!
     @IBOutlet weak var password2: UITextField!
     
-    @IBAction func signIp(sender: AnyObject) {
+    @IBAction func signUp(sender: AnyObject) {
         
         var error = ""
         
@@ -24,13 +24,14 @@ class SignUpViewController: UIViewController {
             error = "Passwords do not match."
         }
         
+        
         if error != "" {
-            var alert = UIAlertController(title: "Oops! Something went wrong.", message: error, preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            
-            self.presentViewController(alert, animated: true, completion: nil)
+            displayAlert("Oops! Something went wrong.", message: error)
+        } else {
+            signupUser()
         }
+        
+        
     }
     
     override func viewDidLoad() {
@@ -43,6 +44,41 @@ class SignUpViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func signupUser(){
+        var userError = ""
+        var user = PFUser()
+        user.username = username.text
+        user.password = password1.text
+        
+        
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool!, error: NSError!) -> Void in
+            if error == nil {
+                
+                self.displayAlert("Success", message: "Thanks for signing up \(user.username)!")
+                
+            } else {
+                if let errorString = error.userInfo?["error"] as? NSString {
+                    userError = errorString
+                } else {
+                    userError = "Please try again later."
+                }
+                
+                self.displayAlert("Could not sign you up", message: userError)
+                
+            }
+        }
+    }
+    
+    func displayAlert(title:String, message:String){
+        
+        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     
