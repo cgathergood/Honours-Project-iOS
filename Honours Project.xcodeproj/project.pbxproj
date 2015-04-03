@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43BB91B1ACEE37500E47637 /* HomeViewController.swift */; };
 		E4ED3D3B1AC0AB4E00310F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */; };
 		E4ED3D3E1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3C1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld */; };
 		E4ED3D401AC0AB4E00310F5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3F1AC0AB4E00310F5F /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E43BB91B1ACEE37500E47637 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E4ED3D351AC0AB4E00310F5F /* Honours Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honours Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ED3D391AC0AB4E00310F5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,13 +146,14 @@
 			children = (
 				E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */,
 				E4ED3D3F1AC0AB4E00310F5F /* ViewController.swift */,
+				E4ED3D801ACDA65500310F5F /* SignUpViewController.swift */,
+				E43BB91B1ACEE37500E47637 /* HomeViewController.swift */,
 				E4ED3D411AC0AB4E00310F5F /* Main.storyboard */,
 				E4ED3D441AC0AB4E00310F5F /* Images.xcassets */,
 				E4ED3D461AC0AB4E00310F5F /* LaunchScreen.xib */,
 				E4ED3D3C1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld */,
 				E4ED3D381AC0AB4E00310F5F /* Supporting Files */,
 				E4ED3D7B1AC0AD7E00310F5F /* Honours Project-Bridging-Header.h */,
-				E4ED3D801ACDA65500310F5F /* SignUpViewController.swift */,
 			);
 			path = "Honours Project";
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */,
 				E4ED3D401AC0AB4E00310F5F /* ViewController.swift in Sources */,
 				E4ED3D3E1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld in Sources */,
 				E4ED3D811ACDA65500310F5F /* SignUpViewController.swift in Sources */,

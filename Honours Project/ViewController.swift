@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -24,27 +26,49 @@ class ViewController: UIViewController {
         if error != "" {
             displayAlert("Oops! Something went wrong.", message: error)
         } else {
-            // Log in goes here
+            activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            
+            PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
+                (user: PFUser!, error: NSError!) -> Void in
+                if user != nil {
+                    
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    
+                    self.performSegueWithIdentifier("login_to_home", sender: self)
+                    
+                } else {
+                    
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    
+                    let errorString = error.userInfo?["error"] as? NSString
+                    
+                    self.displayAlert("Login Unsuccessful", message: errorString!)
+                    
+                }
+            }
         }
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        if PFUser.currentUser() != nil {
+            self.performSegueWithIdentifier("login_to_home", sender: self)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         
-        //        var test = PFObject(className: "Test")
-        //        test.setObject("iOS", forKey: "OperatingSystem")
-        //        test.saveInBackgroundWithBlock{
-        //            (success: Bool!, error: NSError!) -> Void in
-        //
-        //            if(success==true){
-        //                println("Parse Object created: \(test.objectId)")
-        //            } else {
-        //                println(error)
-        //            }
-        //        }
     }
     
     override func didReceiveMemoryWarning() {

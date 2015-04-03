@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1S5-Df-udV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -72,11 +72,12 @@
                     <connections>
                         <outlet property="password" destination="mfY-wt-Pyr" id="v0j-3s-4qX"/>
                         <outlet property="username" destination="RXY-aS-0Up" id="EfQ-wv-BpM"/>
+                        <segue destination="1S5-Df-udV" kind="presentation" identifier="login_to_home" id="hdW-6o-qru"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="379"/>
+            <point key="canvasLocation" x="159" y="75"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="E7I-18-flc">
@@ -154,7 +155,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAA-v7-tpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="408"/>
+            <point key="canvasLocation" x="640" y="75"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="ek5-lw-CiD">
+            <objects>
+                <viewController id="bhF-ZB-Yin" customClass="HomeViewController" customModule="Honours_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UDe-Vi-WED"/>
+                        <viewControllerLayoutGuide type="bottom" id="J92-VW-SW5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RPz-G9-rS7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eui-LH-0ys">
+                                <rect key="frame" x="16" y="72" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5J-6O-TdC">
+                                <rect key="frame" x="16" y="101" width="49" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="Pn9-id-udk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="VFE-7A-46p"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="Eui-LH-0ys" id="jdY-j0-bRx"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="logout" id="ZoU-fn-G9a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyw-aI-1lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="843"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U11-Tq-p72">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1S5-Df-udV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IBM-e1-0ph">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bhF-ZB-Yin" kind="relationship" relationship="rootViewController" id="khW-Iv-Y4i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ugM-a1-iJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="843"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZoU-fn-G9a"/>
+    </inferredMetricsTieBreakers>
 </document>
