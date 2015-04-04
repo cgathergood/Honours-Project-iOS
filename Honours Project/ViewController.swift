@@ -76,6 +76,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Hides navigation bar
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+    }
+    
     func displayAlert(title:String, message:String){
         
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)

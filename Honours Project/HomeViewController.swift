@@ -14,20 +14,19 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        welcomeLabel.text = "Hello \(PFUser.currentUser().username)!"
+        
+        if(PFUser.currentUser() != nil){
+            welcomeLabel.text = "Hello \(PFUser.currentUser().username)"
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func logout(sender: AnyObject) {
-        
         PFUser.logOut()
         self.performSegueWithIdentifier("logout", sender: self)
-        
     }
-
 }
