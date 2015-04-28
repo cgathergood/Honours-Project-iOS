@@ -26,8 +26,8 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>NSLocationWhenInUsageDescription</key>
-	<string>I would like to find you are.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>I would like to find you</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>I would always like to know where you are.</string>
 	<key>UIRequiredDeviceCapabilities</key>

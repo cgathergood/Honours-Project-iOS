@@ -12,22 +12,32 @@ import CoreLocation
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var welcomeLabel: UILabel!
-    
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+    }
+    
+    @IBAction func gpsButton(sender: AnyObject) {
         
         var name:NSString = PFUser.currentUser()!.username!
         
         if(PFUser.currentUser() != nil){
             welcomeLabel.text = "Hello \(name)"
         }
+        
+        //Setting up the locationManager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        var location = locationManager.location
+        displayAlert("GPS", message: "Latitude: \(location.coordinate.latitude) \n Longitude: \(location.coordinate.longitude)")
+        
+        
+
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -41,6 +51,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBAction func logout(sender: AnyObject) {
         PFUser.logOut()
+        locationManager.stopUpdatingLocation()
         self.performSegueWithIdentifier("logout", sender: self)
+    }
+    
+    func displayAlert(title:String, message:String){
+        
+        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
 }
