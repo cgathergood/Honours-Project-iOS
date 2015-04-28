@@ -23,8 +23,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        var name:NSString = PFUser.currentUser()!.username!
+        
         if(PFUser.currentUser() != nil){
-            welcomeLabel.text = "Hello \(PFUser.currentUser().username)"
+            welcomeLabel.text = "Hello \(name)"
         }
     }
     

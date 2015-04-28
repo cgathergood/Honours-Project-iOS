@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43BB91B1ACEE37500E47637 /* HomeViewController.swift */; };
+		E4C9AB861AEFF0EE008374FD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C9AB851AEFF0EE008374FD /* Bolts.framework */; };
+		E4C9AB881AEFF0FA008374FD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C9AB871AEFF0FA008374FD /* Parse.framework */; };
 		E4ED3D3B1AC0AB4E00310F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */; };
 		E4ED3D3E1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3C1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld */; };
 		E4ED3D401AC0AB4E00310F5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3F1AC0AB4E00310F5F /* ViewController.swift */; };
@@ -15,10 +17,6 @@
 		E4ED3D451AC0AB4E00310F5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4ED3D441AC0AB4E00310F5F /* Images.xcassets */; };
 		E4ED3D481AC0AB4E00310F5F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4ED3D461AC0AB4E00310F5F /* LaunchScreen.xib */; };
 		E4ED3D541AC0AB4E00310F5F /* Honours_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D531AC0AB4E00310F5F /* Honours_ProjectTests.swift */; };
-		E4ED3D611AC0AC5800310F5F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D5D1AC0AC5800310F5F /* Bolts.framework */; };
-		E4ED3D621AC0AC5800310F5F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D5E1AC0AC5800310F5F /* Parse.framework */; };
-		E4ED3D631AC0AC5800310F5F /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D5F1AC0AC5800310F5F /* ParseCrashReporting.framework */; };
-		E4ED3D641AC0AC5800310F5F /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D601AC0AC5800310F5F /* ParseUI.framework */; };
 		E4ED3D661AC0AC8F00310F5F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D651AC0AC8F00310F5F /* AudioToolbox.framework */; };
 		E4ED3D681AC0AC9800310F5F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D671AC0AC9800310F5F /* CFNetwork.framework */; };
 		E4ED3D6A1AC0AC9F00310F5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ED3D691AC0AC9F00310F5F /* CoreGraphics.framework */; };
@@ -45,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		E43BB91B1ACEE37500E47637 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E4C9AB851AEFF0EE008374FD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		E4C9AB871AEFF0FA008374FD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E4ED3D351AC0AB4E00310F5F /* Honours Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honours Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ED3D391AC0AB4E00310F5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,10 +56,6 @@
 		E4ED3D4D1AC0AB4E00310F5F /* Honours ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Honours ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ED3D521AC0AB4E00310F5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4ED3D531AC0AB4E00310F5F /* Honours_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Honours_ProjectTests.swift; sourceTree = "<group>"; };
-		E4ED3D5D1AC0AC5800310F5F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		E4ED3D5E1AC0AC5800310F5F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		E4ED3D5F1AC0AC5800310F5F /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		E4ED3D601AC0AC5800310F5F /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		E4ED3D651AC0AC8F00310F5F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E4ED3D671AC0AC9800310F5F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E4ED3D691AC0AC9F00310F5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -83,18 +79,16 @@
 				E4ED3D6C1AC0ACA700310F5F /* CoreLocation.framework in Frameworks */,
 				E4ED3D7A1AC0ACF100310F5F /* libsqlite3.dylib in Frameworks */,
 				E4ED3D781AC0ACE600310F5F /* SystemConfiguration.framework in Frameworks */,
+				E4C9AB861AEFF0EE008374FD /* Bolts.framework in Frameworks */,
 				E4ED3D761AC0ACDE00310F5F /* StoreKit.framework in Frameworks */,
 				E4ED3D741AC0ACD200310F5F /* Security.framework in Frameworks */,
+				E4C9AB881AEFF0FA008374FD /* Parse.framework in Frameworks */,
 				E4ED3D721AC0ACC800310F5F /* QuartzCore.framework in Frameworks */,
 				E4ED3D701AC0ACBC00310F5F /* MobileCoreServices.framework in Frameworks */,
 				E4ED3D6E1AC0ACB100310F5F /* libz.dylib in Frameworks */,
 				E4ED3D6A1AC0AC9F00310F5F /* CoreGraphics.framework in Frameworks */,
 				E4ED3D681AC0AC9800310F5F /* CFNetwork.framework in Frameworks */,
 				E4ED3D661AC0AC8F00310F5F /* AudioToolbox.framework in Frameworks */,
-				E4ED3D621AC0AC5800310F5F /* Parse.framework in Frameworks */,
-				E4ED3D631AC0AC5800310F5F /* ParseCrashReporting.framework in Frameworks */,
-				E4ED3D641AC0AC5800310F5F /* ParseUI.framework in Frameworks */,
-				E4ED3D611AC0AC5800310F5F /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				E4ED3D791AC0ACF100310F5F /* libsqlite3.dylib */,
+				E4C9AB871AEFF0FA008374FD /* Parse.framework */,
+				E4C9AB851AEFF0EE008374FD /* Bolts.framework */,
 				E4ED3D771AC0ACE600310F5F /* SystemConfiguration.framework */,
 				E4ED3D751AC0ACDE00310F5F /* StoreKit.framework */,
 				E4ED3D731AC0ACD200310F5F /* Security.framework */,
@@ -125,10 +121,6 @@
 				E4ED3D371AC0AB4E00310F5F /* Honours Project */,
 				E4ED3D501AC0AB4E00310F5F /* Honours ProjectTests */,
 				E4ED3D361AC0AB4E00310F5F /* Products */,
-				E4ED3D5D1AC0AC5800310F5F /* Bolts.framework */,
-				E4ED3D5E1AC0AC5800310F5F /* Parse.framework */,
-				E4ED3D5F1AC0AC5800310F5F /* ParseCrashReporting.framework */,
-				E4ED3D601AC0AC5800310F5F /* ParseUI.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -414,6 +406,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/Calum/Desktop/parse-library-1.7.2",
+					2,
 				);
 				INFOPLIST_FILE = "Honours Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -431,6 +425,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/Calum/Desktop/parse-library-1.7.2",
+					2,
 				);
 				INFOPLIST_FILE = "Honours Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

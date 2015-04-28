@@ -62,20 +62,21 @@ class SignUpViewController: UIViewController {
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
         user.signUpInBackgroundWithBlock {
-            (succeeded: Bool!, error: NSError!) -> Void in
+            (succeeded: Bool, error: NSError?) -> Void in
             if error == nil {
                 
                 self.activityIndicator.stopAnimating()
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                self.displayAlert("Success", message: "Thanks for signing up \(user.username)!")
+                var name:NSString = user.username!
+                self.displayAlert("Success", message: "Thanks for signing up \(name)")
                 
             } else {
                 
                 self.activityIndicator.stopAnimating()
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
                 
-                if let errorString = error.userInfo?["error"] as? NSString {
-                    userError = errorString
+                if let errorString = error!.userInfo?["error"] as? NSString {
+                    userError = errorString as String
                 } else {
                     userError = "Please try again later."
                 }

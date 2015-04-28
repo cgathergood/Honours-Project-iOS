@@ -35,23 +35,20 @@ class ViewController: UIViewController {
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()
             
             PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
-                (user: PFUser!, error: NSError!) -> Void in
+                (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
                     
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
                     self.performSegueWithIdentifier("login_to_home", sender: self)
-                    
                 } else {
-                    
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
-                    let errorString = error.userInfo?["error"] as? NSString
+                    let errorString = error!.userInfo?["error"] as? NSString
                     
-                    self.displayAlert("Login Unsuccessful", message: errorString!)
-                    
+                    self.displayAlert("Login Unsuccessful", message: errorString! as String)
                 }
             }
         }
