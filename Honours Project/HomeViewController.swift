@@ -17,15 +17,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    @IBAction func gpsButton(sender: AnyObject) {
-        
         var name:NSString = PFUser.currentUser()!.username!
         
         if(PFUser.currentUser() != nil){
             welcomeLabel.text = "Hello \(name)"
         }
+    }
+    
+    @IBAction func gpsButton(sender: AnyObject) {
         
         //Setting up the locationManager
         locationManager.delegate = self
@@ -34,14 +33,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         var location = locationManager.location
-        displayAlert("GPS", message: "Latitude: \(location.coordinate.latitude) \n Longitude: \(location.coordinate.longitude)")
         
-        
-
+        if(location != nil){
+            displayAlert("GPS", message: "Latitude: \(location.coordinate.latitude) \n Longitude: \(location.coordinate.longitude)")
+        } else {
+            displayAlert("Error", message: "Can't find your location")
+        }
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        println(locations)
     }
 
     override func didReceiveMemoryWarning() {
