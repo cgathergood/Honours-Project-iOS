@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate {
+class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var welcomeLabel: UILabel!
     var locationManager = CLLocationManager()
@@ -22,6 +22,23 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         if(PFUser.currentUser() != nil){
             welcomeLabel.text = "Hello \(name)"
         }
+    } 
+    
+    @IBOutlet weak var photoView: UIImageView!
+    
+    @IBAction func getPhoto(sender: AnyObject) {
+        
+        var image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        
+        self.presentViewController(image, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        photoView.image = image
     }
     
     @IBAction func gpsButton(sender: AnyObject) {

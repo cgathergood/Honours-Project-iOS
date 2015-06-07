@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43BB91B1ACEE37500E47637 /* HomeViewController.swift */; };
+		E43C10001B24E35A00906B5D /* camera_large.png in Resources */ = {isa = PBXBuildFile; fileRef = E43C0FFF1B24E35A00906B5D /* camera_large.png */; };
 		E4C9AB861AEFF0EE008374FD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C9AB851AEFF0EE008374FD /* Bolts.framework */; };
 		E4C9AB881AEFF0FA008374FD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C9AB871AEFF0FA008374FD /* Parse.framework */; };
 		E4ED3D3B1AC0AB4E00310F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		E43BB91B1ACEE37500E47637 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E43C0FFF1B24E35A00906B5D /* camera_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_large.png; sourceTree = "<group>"; };
 		E4C9AB851AEFF0EE008374FD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E4C9AB871AEFF0FA008374FD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E4ED3D351AC0AB4E00310F5F /* Honours Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honours Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 				E4ED3D3C1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld */,
 				E4ED3D381AC0AB4E00310F5F /* Supporting Files */,
 				E4ED3D7B1AC0AD7E00310F5F /* Honours Project-Bridging-Header.h */,
+				E43C0FFF1B24E35A00906B5D /* camera_large.png */,
 			);
 			path = "Honours Project";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				E4ED3D431AC0AB4E00310F5F /* Main.storyboard in Resources */,
 				E4ED3D481AC0AB4E00310F5F /* LaunchScreen.xib in Resources */,
+				E43C10001B24E35A00906B5D /* camera_large.png in Resources */,
 				E4ED3D451AC0AB4E00310F5F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

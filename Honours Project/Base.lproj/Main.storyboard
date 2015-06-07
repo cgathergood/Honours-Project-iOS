@@ -23,7 +23,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RXY-aS-0Up">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cg" borderStyle="line" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RXY-aS-0Up">
                                 <rect key="frame" x="71" y="159" width="178" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
@@ -44,7 +44,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-wt-Pyr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="c" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-wt-Pyr">
                                 <rect key="frame" x="71" y="211" width="178" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAA-v7-tpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640" y="75"/>
+            <point key="canvasLocation" x="591" y="75"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ek5-lw-CiD">
@@ -186,8 +186,20 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_large.png" translatesAutoresizingMaskIntoConstraints="NO" id="9IG-Tg-boo">
+                                <rect key="frame" x="16" y="101" width="288" height="238"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mp-Fq-Cl8">
+                                <rect key="frame" x="116" y="347" width="88" height="30"/>
+                                <state key="normal" title="Select Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getPhoto:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="z1F-u8-749"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYv-OM-HZN">
-                                <rect key="frame" x="137" y="269" width="32" height="30"/>
+                                <rect key="frame" x="144" y="391" width="32" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="GPS"/>
                                 <connections>
@@ -206,6 +218,7 @@
                     <navigationItem key="navigationItem" id="VFE-7A-46p"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="photoView" destination="9IG-Tg-boo" id="hDK-Aa-tsk"/>
                         <outlet property="welcomeLabel" destination="Eui-LH-0ys" id="jdY-j0-bRx"/>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="logout" id="ZoU-fn-G9a"/>
                     </connections>
@@ -234,7 +247,10 @@
             <point key="canvasLocation" x="178" y="843"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera_large.png" width="500" height="500"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7mz-ZW-o07"/>
+        <segue reference="ZoU-fn-G9a"/>
     </inferredMetricsTieBreakers>
 </document>
