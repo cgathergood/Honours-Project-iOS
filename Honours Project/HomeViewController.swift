@@ -24,15 +24,40 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         }
     } 
     
+    // Get photo
     @IBOutlet weak var photoView: UIImageView!
     
     @IBAction func getPhoto(sender: AnyObject) {
         
-        var image = UIImagePickerController()
-        image.delegate = self
-        image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        //Create the AlertController
+        let actionSheetController: UIAlertController = UIAlertController(title: "Choose Photo", message: "", preferredStyle: .ActionSheet)
         
-        self.presentViewController(image, animated: true, completion: nil)
+        //Create and add the Cancel action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            //Just dismiss the action sheet
+        }
+        actionSheetController.addAction(cancelAction)
+        //Create and add first option action
+        let takePictureAction: UIAlertAction = UIAlertAction(title: "Take Photo", style: .Default) { action -> Void in
+            var image = UIImagePickerController()
+            image.delegate = self
+            image.sourceType = UIImagePickerControllerSourceType.Camera
+            
+            self.presentViewController(image, animated: true, completion: nil)
+        }
+        actionSheetController.addAction(takePictureAction)
+        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose Exisiting Photo", style: .Default) { action -> Void in
+            var image = UIImagePickerController()
+            image.delegate = self
+            image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            
+            self.presentViewController(image, animated: true, completion: nil)
+
+        }
+        actionSheetController.addAction(choosePictureAction)
+        
+        //Present the AlertController
+        self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
@@ -40,6 +65,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         self.dismissViewControllerAnimated(true, completion: nil)
         photoView.image = image
     }
+    
     
     @IBAction func gpsButton(sender: AnyObject) {
         
