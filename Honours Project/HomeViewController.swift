@@ -106,4 +106,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         
         presentViewController(alert, animated: true, completion: nil)
     }
+    
+    // Closes keyboard by tapping anywhere else
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
 }
