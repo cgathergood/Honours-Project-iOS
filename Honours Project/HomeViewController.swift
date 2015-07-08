@@ -22,6 +22,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         if(PFUser.currentUser() != nil){
             welcomeLabel.text = "Hello \(name)"
         }
+        
+        //Setting up the locationManager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     } 
     
     // Get photo
@@ -68,12 +74,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     
     @IBAction func gpsButton(sender: AnyObject) {
-        
-        //Setting up the locationManager
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
         
         var location = locationManager.location
         
