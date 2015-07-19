@@ -199,11 +199,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYv-OM-HZN">
-                                <rect key="frame" x="144" y="391" width="32" height="30"/>
+                                <rect key="frame" x="116" y="391" width="32" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="GPS"/>
                                 <connections>
                                     <action selector="gpsButton:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="qKa-Ea-Vxr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxQ-uU-Cvv">
+                                <rect key="frame" x="158" y="391" width="46" height="30"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postUpload:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="PAK-QV-0Dr"/>
                                 </connections>
                             </button>
                         </subviews>
