@@ -86,7 +86,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     // Upload
     @IBAction func postUpload(sender: AnyObject) {
-        displayAlert("Upload", message: "Testing")
+        var post = PFObject(className: "TestUpload")
+        post["user"] = PFUser.currentUser()!.username!
+        post["lat"] = locationManager.location.coordinate.latitude
+        post["lon"] = locationManager.location.coordinate.longitude
+        
+        post.save()
+        
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
