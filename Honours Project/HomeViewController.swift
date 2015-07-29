@@ -84,9 +84,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         }
     }
     
+    // Upload
     @IBAction func postUpload(sender: AnyObject) {
         displayAlert("Upload", message: "Testing")
     }
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
     }
 
