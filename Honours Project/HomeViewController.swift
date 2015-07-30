@@ -91,7 +91,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         post["lat"] = locationManager.location.coordinate.latitude
         post["lon"] = locationManager.location.coordinate.longitude
         
-        post.save()
+        post.saveInBackgroundWithBlock{(success: Bool, error: NSError?) -> Void in
+            if (success) {
+                self.displayAlert("Success", message: "Your post was uploaded successfully")
+            } else {
+                self.displayAlert("Failure", message: "Your post was uploaded unsuccessfully, please try again.")
+            }
+            
+        }
         
     }
     
