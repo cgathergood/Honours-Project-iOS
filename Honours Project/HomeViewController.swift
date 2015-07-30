@@ -86,10 +86,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     // Upload
     @IBAction func postUpload(sender: AnyObject) {
-        var post = PFObject(className: "TestUpload")
+        var post = PFObject(className: "PhotoTest")
         post["user"] = PFUser.currentUser()!.username!
         post["lat"] = locationManager.location.coordinate.latitude
         post["lon"] = locationManager.location.coordinate.longitude
+        post["platform"] = "iOS"
+        
+        //Image
+        
+        let imageData = UIImagePNGRepresentation(photoView.image)
+        let imageFile = PFFile(name:"UserImage.png", data:imageData)
+        post["image"] = imageFile
         
         post.saveInBackgroundWithBlock{(success: Bool, error: NSError?) -> Void in
             if (success) {
