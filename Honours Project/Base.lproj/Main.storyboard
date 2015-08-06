@@ -246,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="843"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="fOt-og-UXk">
             <objects>
-                <viewController id="zti-nk-oYF" sceneMemberID="viewController">
+                <viewController id="zti-nk-oYF" customClass="MapViewController" customModule="Honours_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B0f-Dd-W2J"/>
                         <viewControllerLayoutGuide type="bottom" id="yRY-Ev-5id"/>
@@ -257,9 +257,17 @@
                     <view key="view" contentMode="scaleToFill" id="hLv-FX-gJU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y4J-fh-WEz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="map" destination="y4J-fh-WEz" id="4IE-Eb-ql0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTS-w4-sI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
