@@ -113,7 +113,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     }
 
     @IBAction func MapButton(sender: UIButton) {
-        self.displayAlert("Map", message: "Map goes here")
+        self.performSegueWithIdentifier("map", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

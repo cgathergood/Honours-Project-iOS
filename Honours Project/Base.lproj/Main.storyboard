@@ -239,6 +239,7 @@
                         <outlet property="photoView" destination="9IG-Tg-boo" id="hDK-Aa-tsk"/>
                         <outlet property="welcomeLabel" destination="Eui-LH-0ys" id="jdY-j0-bRx"/>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="logout" id="ZoU-fn-G9a"/>
+                        <segue destination="zti-nk-oYF" kind="show" identifier="map" id="D1s-kF-HlJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyw-aI-1lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
