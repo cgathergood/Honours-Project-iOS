@@ -8,8 +8,32 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    var locationManager = CLLocationManager()
     
     @IBOutlet weak var map: MKMapView!
+
+    
+    override func viewDidLoad() {
+        
+        map.showsUserLocation = true
+        
+        //Setting up the locationManager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    @IBAction func zoomIn(sender: AnyObject) {
+        let userLocation = map.userLocation
+        
+        let region = MKCoordinateRegionMakeWithDistance(
+            userLocation.location.coordinate, 2000, 2000)
+        
+        map.setRegion(region, animated: true)
+    }
 }

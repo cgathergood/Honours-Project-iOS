@@ -258,12 +258,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cO-QC-Wbq">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="Find Me!" id="zNI-34-zeY">
+                                        <connections>
+                                            <action selector="zoomIn:" destination="zti-nk-oYF" id="ULx-k5-Ktr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y4J-fh-WEz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0cO-QC-Wbq" firstAttribute="bottom" secondItem="hLv-FX-gJU" secondAttribute="bottomMargin" id="9Qc-wa-l7G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0cO-QC-Wbq" secondAttribute="trailing" constant="-16" id="LEA-sJ-DvP"/>
+                            <constraint firstAttribute="centerY" secondItem="0cO-QC-Wbq" secondAttribute="centerY" id="Se4-q6-inh"/>
+                            <constraint firstItem="0cO-QC-Wbq" firstAttribute="leading" secondItem="hLv-FX-gJU" secondAttribute="leadingMargin" constant="-16" id="a1D-Xo-2Bh"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="map" destination="y4J-fh-WEz" id="4IE-Eb-ql0"/>
@@ -271,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTS-w4-sI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213" y="843"/>
+            <point key="canvasLocation" x="1215" y="843"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U11-Tq-p72">
@@ -284,6 +302,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="fxP-aw-UHW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="bhF-ZB-Yin" kind="relationship" relationship="rootViewController" id="khW-Iv-Y4i"/>
                     </connections>
