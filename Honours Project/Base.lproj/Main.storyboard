@@ -199,7 +199,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYv-OM-HZN">
-                                <rect key="frame" x="116" y="391" width="32" height="30"/>
+                                <rect key="frame" x="89" y="390" width="32" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="GPS"/>
                                 <connections>
@@ -207,12 +207,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxQ-uU-Cvv">
-                                <rect key="frame" x="158" y="391" width="46" height="30"/>
+                                <rect key="frame" x="131" y="390" width="46" height="30"/>
                                 <state key="normal" title="Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="postUpload:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="PAK-QV-0Dr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5S-8n-A2X">
+                                <rect key="frame" x="185" y="390" width="46" height="30"/>
+                                <state key="normal" title="Map">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="MapButton:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="5dx-w5-lPa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -235,6 +244,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyw-aI-1lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="843"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fOt-og-UXk">
+            <objects>
+                <viewController id="zti-nk-oYF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B0f-Dd-W2J"/>
+                        <viewControllerLayoutGuide type="bottom" id="yRY-Ev-5id"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hLv-FX-gJU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTS-w4-sI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213" y="843"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U11-Tq-p72">
