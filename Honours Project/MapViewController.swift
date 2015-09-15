@@ -44,6 +44,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func getPosts() {
-        println("Get Posts here")
+        var query = PFQuery(className:"PhotoTest")
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            println(objects?.count)
+            if(objects?.count > 0) {
+                for object in objects! {
+                    var post:PFObject = object as! PFObject
+                    println(post)
+                    let annotation = MapAnnotation(title: post["user"] as! String,
+                        coordinate: CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue))
+                    
+                    self.map.addAnnotation(annotation)
+                }
+                println(objects?.count)
+            }
+        }
     }
 }
