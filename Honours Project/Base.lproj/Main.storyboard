@@ -258,7 +258,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cO-QC-Wbq">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cO-QC-Wbq">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="Find Me!" id="zNI-34-zeY">
@@ -273,12 +273,6 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0cO-QC-Wbq" firstAttribute="bottom" secondItem="hLv-FX-gJU" secondAttribute="bottomMargin" id="9Qc-wa-l7G"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0cO-QC-Wbq" secondAttribute="trailing" constant="-16" id="LEA-sJ-DvP"/>
-                            <constraint firstAttribute="centerY" secondItem="0cO-QC-Wbq" secondAttribute="centerY" id="Se4-q6-inh"/>
-                            <constraint firstItem="0cO-QC-Wbq" firstAttribute="leading" secondItem="hLv-FX-gJU" secondAttribute="leadingMargin" constant="-16" id="a1D-Xo-2Bh"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

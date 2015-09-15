@@ -27,13 +27,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        getPosts();
+        
     }
     @IBAction func zoomIn(sender: AnyObject) {
+        zoomOnUser()
+    }
+    
+    func zoomOnUser() {
         let userLocation = map.userLocation
         
         let region = MKCoordinateRegionMakeWithDistance(
             userLocation.location.coordinate, 2000, 2000)
         
         map.setRegion(region, animated: true)
+    }
+    
+    func getPosts() {
+        println("Get Posts here")
     }
 }
