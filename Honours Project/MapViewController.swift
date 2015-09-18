@@ -51,7 +51,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 for object in objects! {
                     var post:PFObject = object as! PFObject
                     println(post)
-                    let annotation = MapAnnotation(title: post["user"] as! String,
+                    var user = post["user"] as! String
+                    var platform = post["platform"] as! String
+                    var titleText = user + ", " + platform
+                    let annotation = MapAnnotation(title: titleText,
                         coordinate: CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue))
                     
                     self.map.addAnnotation(annotation)
