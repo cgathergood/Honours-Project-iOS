@@ -50,7 +50,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             if(objects?.count > 0) {
                 for object in objects! {
                     var post:PFObject = object as! PFObject
-                    println(post)
                     var user = post["user"] as! String
                     var platform = post["platform"] as! String
                     var titleText = user + ", " + platform
@@ -59,7 +58,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     
                     self.map.addAnnotation(annotation)
                 }
-                println(objects?.count)
             }
         }
     }
