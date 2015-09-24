@@ -49,7 +49,7 @@ class SignUpViewController: UIViewController {
     
     func signupUser(){
         var userError = ""
-        var user = PFUser()
+        let user = PFUser()
         user.username = username.text
         user.password = password1.text
         
@@ -67,7 +67,7 @@ class SignUpViewController: UIViewController {
                 
                 self.activityIndicator.stopAnimating()
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                var name:NSString = user.username!
+                let name:NSString = user.username!
                 self.displayAlert("Success", message: "Thanks for signing up \(name)")
                 
             } else {

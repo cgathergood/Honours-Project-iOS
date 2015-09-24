@@ -86,7 +86,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     // Upload
     @IBAction func postUpload(sender: AnyObject) {
-        var post = PFObject(className: "PhotoTest")
+        let post = PFObject(className: "PhotoTest")
         post["user"] = PFUser.currentUser()!.username!
         post["lat"] = locationManager.location!.coordinate.latitude
         post["lon"] = locationManager.location!.coordinate.longitude
