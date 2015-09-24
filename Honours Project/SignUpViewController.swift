@@ -49,7 +49,7 @@ class SignUpViewController: UIViewController {
     
     func signupUser(){
         var userError = ""
-        var user = PFUser()
+        let user = PFUser()
         user.username = username.text
         user.password = password1.text
         
@@ -67,7 +67,7 @@ class SignUpViewController: UIViewController {
                 
                 self.activityIndicator.stopAnimating()
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                var name:NSString = user.username!
+                let name:NSString = user.username!
                 self.displayAlert("Success", message: "Thanks for signing up \(name)")
                 
             } else {
@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
                 
-                if let errorString = error!.userInfo?["error"] as? NSString {
+                if let errorString = error!.userInfo["error"] as? NSString {
                     userError = errorString as String
                 } else {
                     userError = "Please try again later."
@@ -89,7 +89,7 @@ class SignUpViewController: UIViewController {
     
     func displayAlert(title:String, message:String){
         
-        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         
@@ -97,7 +97,7 @@ class SignUpViewController: UIViewController {
     }
     
     // Closes keyboard by tapping anywhere else
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     

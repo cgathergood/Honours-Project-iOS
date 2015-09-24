@@ -17,7 +17,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var name:NSString = PFUser.currentUser()!.username!
+        let name:NSString = PFUser.currentUser()!.username!
         
         if(PFUser.currentUser() != nil){
             welcomeLabel.text = "Hello \(name)"
@@ -45,7 +45,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         actionSheetController.addAction(cancelAction)
         //Create and add first option action
         let takePictureAction: UIAlertAction = UIAlertAction(title: "Take Photo", style: .Default) { action -> Void in
-            var image = UIImagePickerController()
+            let image = UIImagePickerController()
             image.delegate = self
             image.sourceType = UIImagePickerControllerSourceType.Camera
             
@@ -53,7 +53,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         }
         actionSheetController.addAction(takePictureAction)
         let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose Exisiting Photo", style: .Default) { action -> Void in
-            var image = UIImagePickerController()
+            let image = UIImagePickerController()
             image.delegate = self
             image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
             
@@ -75,10 +75,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     @IBAction func gpsButton(sender: AnyObject) {
         
-        var location = locationManager.location
+        let location = locationManager.location
         
         if(location != nil){
-            displayAlert("GPS", message: "Latitude: \(location.coordinate.latitude) \n Longitude: \(location.coordinate.longitude)")
+            displayAlert("GPS", message: "Latitude: \(location!.coordinate.latitude) \n Longitude: \(location!.coordinate.longitude)")
         } else {
             displayAlert("Error", message: "Can't find your location")
         }
@@ -86,16 +86,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     // Upload
     @IBAction func postUpload(sender: AnyObject) {
-        var post = PFObject(className: "PhotoTest")
+        let post = PFObject(className: "PhotoTest")
         post["user"] = PFUser.currentUser()!.username!
-        post["lat"] = locationManager.location.coordinate.latitude
-        post["lon"] = locationManager.location.coordinate.longitude
+        post["lat"] = locationManager.location!.coordinate.latitude
+        post["lon"] = locationManager.location!.coordinate.longitude
         post["platform"] = "iOS"
         
         //Image
         
-        let imageData = UIImagePNGRepresentation(photoView.image)
-        let imageFile = PFFile(name:"UserImage.png", data:imageData)
+        let imageData = UIImagePNGRepresentation(photoView.image!)
+        let imageFile = PFFile(name:"UserImage.png", data:imageData!)
         post["image"] = imageFile
         
         post.saveInBackgroundWithBlock{(success: Bool, error: NSError?) -> Void in
@@ -109,7 +109,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     }
 
     @IBAction func MapButton(sender: UIButton) {
@@ -129,7 +129,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     
     func displayAlert(title:String, message:String){
         
-        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         
@@ -137,7 +137,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
     }
     
     // Closes keyboard by tapping anywhere else
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
 }

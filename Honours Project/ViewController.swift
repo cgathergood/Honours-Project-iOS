@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             activityIndicator.startAnimating()
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()
             
-            PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
+            PFUser.logInWithUsernameInBackground(username.text!, password:password.text!) {
                 (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
                     
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
-                    let errorString = error!.userInfo?["error"] as? NSString
+                    let errorString = error!.userInfo["error"] as? NSString
                     
                     self.displayAlert("Login Unsuccessful", message: errorString! as String)
                 }
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
     
     func displayAlert(title:String, message:String){
         
-        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
     }
     
     // Closes keyboard by tapping anywhere else
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
