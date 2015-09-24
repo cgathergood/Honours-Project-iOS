@@ -38,21 +38,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let userLocation = map.userLocation
         
         let region = MKCoordinateRegionMakeWithDistance(
-            userLocation.location.coordinate, 2000, 2000)
+            userLocation.location!.coordinate, 2000, 2000)
         
         map.setRegion(region, animated: true)
     }
     
     func getPosts() {
-        var query = PFQuery(className:"PhotoTest")
+        let query = PFQuery(className:"PhotoTest")
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            println(objects?.count)
+            print(objects?.count)
             if(objects?.count > 0) {
                 for object in objects! {
-                    var post:PFObject = object as! PFObject
-                    var user = post["user"] as! String
-                    var platform = post["platform"] as! String
-                    var titleText = user + ", " + platform
+                    let post:PFObject = object as! PFObject
+                    let user = post["user"] as! String
+                    let platform = post["platform"] as! String
+                    let titleText = user + ", " + platform
                     let annotation = MapAnnotation(title: titleText,
                         coordinate: CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue))
                     

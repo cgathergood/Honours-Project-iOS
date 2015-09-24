@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
                 
-                if let errorString = error!.userInfo?["error"] as? NSString {
+                if let errorString = error!.userInfo["error"] as? NSString {
                     userError = errorString as String
                 } else {
                     userError = "Please try again later."
@@ -89,7 +89,7 @@ class SignUpViewController: UIViewController {
     
     func displayAlert(title:String, message:String){
         
-        var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         
@@ -97,7 +97,7 @@ class SignUpViewController: UIViewController {
     }
     
     // Closes keyboard by tapping anywhere else
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
