@@ -49,7 +49,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             print(objects?.count)
             if(objects?.count > 0) {
                 for object in objects! {
-                    let post:PFObject = object as! PFObject
+                    let post = object 
                     let user = post["user"] as! String
                     let platform = post["platform"] as! String
                     let titleText = user + ", " + platform

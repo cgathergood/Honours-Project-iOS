@@ -10,8 +10,9 @@
 		E41EA0AF1BA876AA004F9A88 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41EA0AE1BA876AA004F9A88 /* MapAnnotation.swift */; };
 		E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43BB91B1ACEE37500E47637 /* HomeViewController.swift */; };
 		E43C10001B24E35A00906B5D /* camera_large.png in Resources */ = {isa = PBXBuildFile; fileRef = E43C0FFF1B24E35A00906B5D /* camera_large.png */; };
-		E467C1FF1BB4772B00EEB106 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E467C1FD1BB4772B00EEB106 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		E467C2001BB4772B00EEB106 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E467C1FE1BB4772B00EEB106 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		E443671B1BC1837A00A05564 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44367191BC1837A00A05564 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		E443671C1BC1837A00A05564 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E443671A1BC1837A00A05564 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		E443671E1BC183E400A05564 /* parse-library-1.8.5 in Resources */ = {isa = PBXBuildFile; fileRef = E443671D1BC183E400A05564 /* parse-library-1.8.5 */; settings = {ASSET_TAGS = (); }; };
 		E47F742C1B73DCF100CF6661 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47F742B1B73DCF100CF6661 /* MapViewController.swift */; };
 		E4ED3D3B1AC0AB4E00310F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */; };
 		E4ED3D3E1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3C1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld */; };
@@ -48,8 +49,9 @@
 		E41EA0AE1BA876AA004F9A88 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		E43BB91B1ACEE37500E47637 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E43C0FFF1B24E35A00906B5D /* camera_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_large.png; sourceTree = "<group>"; };
-		E467C1FD1BB4772B00EEB106 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		E467C1FE1BB4772B00EEB106 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E44367191BC1837A00A05564 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.8.5/Bolts.framework"; sourceTree = "<group>"; };
+		E443671A1BC1837A00A05564 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.8.5/Parse.framework"; sourceTree = "<group>"; };
+		E443671D1BC183E400A05564 /* parse-library-1.8.5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.8.5"; sourceTree = "<group>"; };
 		E47F742B1B73DCF100CF6661 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E4ED3D351AC0AB4E00310F5F /* Honours Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honours Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ED3D391AC0AB4E00310F5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,10 +87,10 @@
 				E4ED3D6C1AC0ACA700310F5F /* CoreLocation.framework in Frameworks */,
 				E4ED3D7A1AC0ACF100310F5F /* libsqlite3.dylib in Frameworks */,
 				E4ED3D781AC0ACE600310F5F /* SystemConfiguration.framework in Frameworks */,
-				E467C1FF1BB4772B00EEB106 /* Bolts.framework in Frameworks */,
+				E443671B1BC1837A00A05564 /* Bolts.framework in Frameworks */,
 				E4ED3D761AC0ACDE00310F5F /* StoreKit.framework in Frameworks */,
 				E4ED3D741AC0ACD200310F5F /* Security.framework in Frameworks */,
-				E467C2001BB4772B00EEB106 /* Parse.framework in Frameworks */,
+				E443671C1BC1837A00A05564 /* Parse.framework in Frameworks */,
 				E4ED3D721AC0ACC800310F5F /* QuartzCore.framework in Frameworks */,
 				E4ED3D701AC0ACBC00310F5F /* MobileCoreServices.framework in Frameworks */,
 				E4ED3D6E1AC0ACB100310F5F /* libz.dylib in Frameworks */,
@@ -125,8 +127,9 @@
 				E4ED3D371AC0AB4E00310F5F /* Honours Project */,
 				E4ED3D501AC0AB4E00310F5F /* Honours ProjectTests */,
 				E4ED3D361AC0AB4E00310F5F /* Products */,
-				E467C1FD1BB4772B00EEB106 /* Bolts.framework */,
-				E467C1FE1BB4772B00EEB106 /* Parse.framework */,
+				E44367191BC1837A00A05564 /* Bolts.framework */,
+				E443671A1BC1837A00A05564 /* Parse.framework */,
+				E443671D1BC183E400A05564 /* parse-library-1.8.5 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -269,6 +272,7 @@
 				E4ED3D431AC0AB4E00310F5F /* Main.storyboard in Resources */,
 				E4ED3D481AC0AB4E00310F5F /* LaunchScreen.xib in Resources */,
 				E43C10001B24E35A00906B5D /* camera_large.png in Resources */,
+				E443671E1BC183E400A05564 /* parse-library-1.8.5 in Resources */,
 				E4ED3D451AC0AB4E00310F5F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +428,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/Calum/Desktop/parse-library-1.7.2",
 					2,
+					"$(PROJECT_DIR)/parse-library-1.8.5",
 				);
 				INFOPLIST_FILE = "Honours Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -445,6 +450,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/Calum/Desktop/parse-library-1.7.2",
 					2,
+					"$(PROJECT_DIR)/parse-library-1.8.5",
 				);
 				INFOPLIST_FILE = "Honours Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
