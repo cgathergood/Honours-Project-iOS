@@ -93,9 +93,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UINavigat
         post["platform"] = "iOS"
         
         //Image
-        
-        let imageData = UIImagePNGRepresentation(photoView.image!)
-        let imageFile = PFFile(name:"UserImage.png", data:imageData!)
+        let imageData = photoView.image!.mediumQualityJPEGNSData
+        let imageFile = PFFile(name:"UserImage.png", data:imageData)
         post["image"] = imageFile
         
         post.saveInBackgroundWithBlock{(success: Bool, error: NSError?) -> Void in
