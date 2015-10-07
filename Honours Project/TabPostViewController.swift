@@ -8,14 +8,12 @@
 
 import UIKit
 
-class TabPostViewController: UIViewController {
+class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +33,7 @@ class TabPostViewController: UIViewController {
         
         let takePictureAction: UIAlertAction = UIAlertAction(title: "Take Photo", style: .Default) { action -> Void in
             let image = UIImagePickerController()
+            image.delegate = self
             image.sourceType = UIImagePickerControllerSourceType.Camera
             
             self.presentViewController(image, animated: true, completion: nil)
@@ -43,6 +42,7 @@ class TabPostViewController: UIViewController {
         
         let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose Exisiting Photo", style: .Default) { action -> Void in
             let image = UIImagePickerController()
+            image.delegate = self
             image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
             
             self.presentViewController(image, animated: true, completion: nil)
@@ -52,6 +52,12 @@ class TabPostViewController: UIViewController {
         //Present the AlertController
         self.presentViewController(actionSheetController, animated: true, completion: nil)
         
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        imageView.image = image
     }
     
     @IBAction func post(sender: AnyObject) {
