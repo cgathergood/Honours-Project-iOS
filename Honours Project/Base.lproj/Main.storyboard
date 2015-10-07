@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="843"/>
         </scene>
-        <!--View Controller-->
+        <!--Post-->
         <scene sceneID="X62-hY-Pdl">
             <objects>
-                <viewController id="UW5-WC-7xc" sceneMemberID="viewController">
+                <viewController title="Post" id="UW5-WC-7xc" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0ww-0a-FuW"/>
                         <viewControllerLayoutGuide type="bottom" id="coz-k4-eyz"/>
@@ -267,18 +267,23 @@
                     <view key="view" contentMode="scaleToFill" id="KcG-aU-q1d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_large.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vs9-fW-yNI">
+                                <rect key="frame" x="16" y="70" width="288" height="238"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="2XB-Af-eC9"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="Compact Camera-32" id="2XB-Af-eC9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gy-yV-naB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2011" y="389"/>
         </scene>
-        <!--View Controller-->
+        <!--Map-->
         <scene sceneID="llh-im-djj">
             <objects>
-                <viewController id="sdJ-uz-5Yi" sceneMemberID="viewController">
+                <viewController title="Map" id="sdJ-uz-5Yi" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i5C-3V-cch"/>
                         <viewControllerLayoutGuide type="bottom" id="UHh-lO-LWd"/>
@@ -288,22 +293,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mm9-0S-EXC">
-                                <rect key="frame" x="20" y="28" width="280" height="483"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="Oj4-Tr-8GQ"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map Marker-32*" id="Oj4-Tr-8GQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6r-9V-1zD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2011" y="1071"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed-->
         <scene sceneID="GSt-sM-F1z">
             <objects>
-                <viewController id="c7f-kn-dwE" sceneMemberID="viewController">
+                <viewController title="Feed" id="c7f-kn-dwE" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rXl-Y2-KXr"/>
                         <viewControllerLayoutGuide type="bottom" id="i8o-kr-YUC"/>
@@ -311,9 +316,15 @@
                     <view key="view" contentMode="scaleToFill" id="ldN-wO-wIk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gOl-Bq-r5S">
+                                <rect key="frame" x="0.0" y="28" width="320" height="483"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="favorites" id="DtV-Ic-jyd"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="Activity Feed-32" id="DtV-Ic-jyd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E30-py-oXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -402,6 +413,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Activity Feed-32" width="32" height="32"/>
+        <image name="Compact Camera-32" width="32" height="32"/>
+        <image name="Map Marker-32*" width="500" height="500"/>
         <image name="camera_large.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
