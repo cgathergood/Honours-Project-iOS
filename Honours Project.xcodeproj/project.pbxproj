@@ -10,6 +10,7 @@
 		E40EF7881BC5C54E0016DB8C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40EF7861BC5C54E0016DB8C /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
 		E40EF7891BC5C54E0016DB8C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40EF7871BC5C54E0016DB8C /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
 		E40EF78B1BC5C6AD0016DB8C /* TabMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF78A1BC5C6AD0016DB8C /* TabMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E40EF78D1BC5C7AC0016DB8C /* TabPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E41EA0AF1BA876AA004F9A88 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41EA0AE1BA876AA004F9A88 /* MapAnnotation.swift */; };
 		E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43BB91B1ACEE37500E47637 /* HomeViewController.swift */; };
 		E43C10001B24E35A00906B5D /* camera_large.png in Resources */ = {isa = PBXBuildFile; fileRef = E43C0FFF1B24E35A00906B5D /* camera_large.png */; };
@@ -50,6 +51,7 @@
 		E40EF7861BC5C54E0016DB8C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E40EF7871BC5C54E0016DB8C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E40EF78A1BC5C6AD0016DB8C /* TabMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabMapViewController.swift; sourceTree = "<group>"; };
+		E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPostViewController.swift; sourceTree = "<group>"; };
 		E41EA0AE1BA876AA004F9A88 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		E43BB91B1ACEE37500E47637 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E43C0FFF1B24E35A00906B5D /* camera_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_large.png; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				E41EA0AE1BA876AA004F9A88 /* MapAnnotation.swift */,
 				E44367211BC1875200A05564 /* UIImage+FileSize.swift */,
 				E40EF78A1BC5C6AD0016DB8C /* TabMapViewController.swift */,
+				E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */,
 			);
 			path = "Honours Project";
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				E44367221BC1875200A05564 /* UIImage+FileSize.swift in Sources */,
 				E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */,
+				E40EF78D1BC5C7AC0016DB8C /* TabPostViewController.swift in Sources */,
 				E47F742C1B73DCF100CF6661 /* MapViewController.swift in Sources */,
 				E41EA0AF1BA876AA004F9A88 /* MapAnnotation.swift in Sources */,
 				E4ED3D401AC0AB4E00310F5F /* ViewController.swift in Sources */,
