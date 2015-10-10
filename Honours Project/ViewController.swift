@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         if PFUser.currentUser() != nil {
-            self.performSegueWithIdentifier("login_to_home", sender: self)
+            self.performSegueWithIdentifier("login_to_tab", sender: self)
         }
     }
     
