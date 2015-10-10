@@ -82,6 +82,7 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
                 displayAlert("Image Required", message: "Please select an Image.")
             } else {
                 //Post goes here
+                resetAfterPost()
             }
         }
 
@@ -97,6 +98,11 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    }
+    
+    func resetAfterPost() {
+        imageView.image = UIImage(named: "camera_large.png")
+        photoSelected = false;
     }
     
 
