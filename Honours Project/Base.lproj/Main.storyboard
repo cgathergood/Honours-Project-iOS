@@ -71,7 +71,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8qA-pb-aIa" kind="show" id="hbl-Lb-EML"/>
+                                    <segue destination="8qA-pb-aIa" kind="show" identifier="login_to_tab" id="hbl-Lb-EML"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -259,7 +259,7 @@
         <!--Post-->
         <scene sceneID="X62-hY-Pdl">
             <objects>
-                <viewController title="Post" id="UW5-WC-7xc" sceneMemberID="viewController">
+                <viewController title="Post" id="UW5-WC-7xc" customClass="TabPostViewController" customModule="Honours_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0ww-0a-FuW"/>
                         <viewControllerLayoutGuide type="bottom" id="coz-k4-eyz"/>
@@ -269,12 +269,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_large.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vs9-fW-yNI">
-                                <rect key="frame" x="16" y="70" width="288" height="238"/>
+                                <rect key="frame" x="16" y="74" width="288" height="238"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aI-Kv-4x4">
+                                <rect key="frame" x="116" y="320" width="89" height="30"/>
+                                <state key="normal" title="Select Image"/>
+                                <connections>
+                                    <action selector="getPhoto:" destination="UW5-WC-7xc" eventType="touchUpInside" id="PcC-wE-zeD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1a-6E-x6v">
+                                <rect key="frame" x="145" y="358" width="31" height="30"/>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="post:" destination="UW5-WC-7xc" eventType="touchUpInside" id="7pg-pS-cQj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Post" image="Compact Camera-32" id="2XB-Af-eC9"/>
+                    <connections>
+                        <outlet property="imageView" destination="Vs9-fW-yNI" id="IoB-9l-I2r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gy-yV-naB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
