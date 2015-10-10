@@ -12,6 +12,7 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var imageView: UIImageView!
     var locationManager = CLLocationManager();
+    var photoSelected:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,15 +69,20 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         self.dismissViewControllerAnimated(true, completion: nil)
         imageView.image = image
+        photoSelected = true
     }
     
     @IBAction func post(sender: AnyObject) {
         let location = locationManager.location
         
-        if(location != nil){
-            displayAlert("GPS", message: "Latitude: \(location!.coordinate.latitude) \n Longitude: \(location!.coordinate.longitude)")
+        if(location == nil){
+            displayAlert("GPS Required", message: "You must enable GPS to upload a post.")
         } else {
-            displayAlert("Error", message: "Can't find your location")
+            if (photoSelected == false){
+                displayAlert("Image Required", message: "Please select an Image.")
+            } else {
+                //Post goes here
+            }
         }
 
     }
