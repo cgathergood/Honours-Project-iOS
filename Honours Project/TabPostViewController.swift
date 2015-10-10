@@ -8,18 +8,28 @@
 
 import UIKit
 
-class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
+    var locationManager = CLLocationManager();
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Setting up the locationManager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func getPhoto(sender: AnyObject) {
         
         //Create the AlertController
@@ -61,7 +71,28 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func post(sender: AnyObject) {
+        let location = locationManager.location
+        
+        if(location != nil){
+            displayAlert("GPS", message: "Latitude: \(location!.coordinate.latitude) \n Longitude: \(location!.coordinate.longitude)")
+        } else {
+            displayAlert("Error", message: "Can't find your location")
+        }
+
     }
+    
+    func displayAlert(title:String, message:String){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    }
+    
 
     /*
     // MARK: - Navigation
