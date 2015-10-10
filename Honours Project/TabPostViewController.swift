@@ -81,8 +81,24 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
             if (photoSelected == false){
                 displayAlert("Image Required", message: "Please select an Image.")
             } else {
-                //Post goes here
-                resetAfterPost()
+                let post = PFObject(className: "PhotoTest")
+                post["user"] = PFUser.currentUser()?.username
+                post["lat"] = locationManager.location!.coordinate.latitude
+                post["lon"] = locationManager.location!.coordinate.longitude
+                post["platform"] = "iOS"
+                
+                let imageData = imageView.image!.mediumQualityJPEGNSData
+                let imageFile = PFFile(name:"UserImage.png", data:imageData)
+                post["image"] = imageFile
+                
+                post.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                    if (success) {
+                        self.displayAlert("Success", message: "Your post was uploaded successfully")
+                        self.resetAfterPost()
+                    } else {
+                        self.displayAlert("Failure", message: "Your post was uploaded unsuccessfully, please try again.")
+                    }
+                })
             }
         }
 
