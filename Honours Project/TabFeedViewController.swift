@@ -12,6 +12,7 @@ class TabFeedViewController: UITableViewController {
     
     var platforms = [String]()
     var users = [String]()
+    var timestamps = [String]()
     var images = [UIImage]()
     var imageFiles = [PFFile]()
     
@@ -26,7 +27,7 @@ class TabFeedViewController: UITableViewController {
                     for object in objects! {
                         self.users.append(object["user"] as! String)
                         self.platforms.append(object["platform"] as! String)
-                        //self.timestamps.append(object["createdAt"] as! String)
+                        self.timestamps.append(self.formatDate(object.createdAt!))
                         self.imageFiles.append(object["image"] as! PFFile)
                         self.tableView.reloadData()
                     }
@@ -40,6 +41,13 @@ class TabFeedViewController: UITableViewController {
 
         
         
+    }
+    
+    func formatDate(parseDate: NSDate) -> String{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "E MMM d hh:mm"
+        let dateString = dateFormatter.stringFromDate(parseDate)
+        return dateString
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,11 +71,10 @@ class TabFeedViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath) as! Cell
 
-        //cell.usernameLabel.text = descriptions[indexPath.row]
         cell.postedImage.image = UIImage(named: "camera_large.png")
         cell.username.text = users[indexPath.row]
         cell.platform.text = platforms[indexPath.row]
-        cell.timestamp.text = "11/10/2015"
+        cell.timestamp.text = timestamps[indexPath.row]
 
         return cell
     }
