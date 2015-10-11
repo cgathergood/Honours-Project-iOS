@@ -10,7 +10,7 @@ import UIKit
 
 class TabFeedViewController: UITableViewController {
     
-    var descriptions = [String]()
+    var platforms = [String]()
     var users = [String]()
     var images = [UIImage]()
     var imageFiles = [PFFile]()
@@ -22,17 +22,18 @@ class TabFeedViewController: UITableViewController {
         query.findObjectsInBackgroundWithBlock {
             (objects, error) -> Void in
             if error == nil {
-                // The find succeeded.
                 print("Successfully retrieved \(objects!.count) posts.")
-                // Do something with the found objects
-//                for object in objects! {
-//                    self.descriptions.append(object["Description"] as! String)
-//                    self.users.append(object["User"] as! String)
-//                    self.imageFiles.append(object["imageFile"] as! PFFile)
-//                    
-//                    self.tableView.reloadData()
-//                    
-//                }
+                if(objects!.count > 0) {
+                    for object in objects! {
+                        self.users.append(object["user"] as! String)
+                        self.platforms.append(object["platform"] as! String)
+                        //self.timestamps.append(object["createdAt"] as! String)
+                        self.imageFiles.append(object["image"] as! PFFile)
+                        self.tableView.reloadData()
+                    }
+                }
+                print(self.users.count)
+
             } else {
                 // Log details of the failure
                 print(error)
@@ -57,7 +58,7 @@ class TabFeedViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return users.count
     }
 
     
