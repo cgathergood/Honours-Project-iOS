@@ -41,7 +41,10 @@ class TabFeedViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath) as! Cell
 
-        // Configure the cell...
+        cell.postedImage.image = UIImage(named: "camera_large.png")
+        cell.username.text = "Username"
+        cell.platform.text = "iOS"
+        cell.timestamp.text = "11/10/2015"
 
         return cell
     }
