@@ -329,21 +329,11 @@
         <scene sceneID="GSt-sM-F1z">
             <objects>
                 <viewController title="Feed" id="c7f-kn-dwE" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rXl-Y2-KXr"/>
-                        <viewControllerLayoutGuide type="bottom" id="i8o-kr-YUC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ldN-wO-wIk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zlT-KH-aAM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gOl-Bq-r5S">
-                                <rect key="frame" x="0.0" y="28" width="320" height="483"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                    </tableView>
                     <tabBarItem key="tabBarItem" title="Feed" image="Activity Feed-32" id="DtV-Ic-jyd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E30-py-oXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
