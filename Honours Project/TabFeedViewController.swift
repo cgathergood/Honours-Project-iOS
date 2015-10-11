@@ -13,7 +13,6 @@ class TabFeedViewController: UITableViewController {
     var platforms = [String]()
     var users = [String]()
     var timestamps = [String]()
-    var images = [UIImage]()
     var imageFiles = [PFFile]()
     
     override func viewDidLoad() {
@@ -76,6 +75,21 @@ class TabFeedViewController: UITableViewController {
         cell.platform.text = platforms[indexPath.row]
         cell.timestamp.text = timestamps[indexPath.row]
 
+        
+        imageFiles[indexPath.row].getDataInBackgroundWithBlock{
+            (imageData, error) -> Void in
+            
+            if error == nil {
+                
+                let image = UIImage(data: imageData!)
+                
+                cell.postedImage.image = image
+                
+            }
+            
+        }
+
+        
         return cell
     }
     
