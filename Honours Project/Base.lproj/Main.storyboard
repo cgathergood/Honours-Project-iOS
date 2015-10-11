@@ -328,7 +328,7 @@
         <!--Feed-->
         <scene sceneID="GSt-sM-F1z">
             <objects>
-                <viewController title="Feed" id="c7f-kn-dwE" sceneMemberID="viewController">
+                <viewController title="Feed" id="c7f-kn-dwE" customClass="TabFeedViewController" customModule="Honours_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="256" sectionHeaderHeight="28" sectionFooterHeight="28" id="zlT-KH-aAM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
