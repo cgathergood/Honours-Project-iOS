@@ -9,15 +9,38 @@
 import UIKit
 
 class TabFeedViewController: UITableViewController {
-
+    
+    var descriptions = [String]()
+    var users = [String]()
+    var images = [UIImage]()
+    var imageFiles = [PFFile]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let query = PFQuery(className:"PhotoTest")
+        query.findObjectsInBackgroundWithBlock {
+            (objects, error) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) posts.")
+                // Do something with the found objects
+//                for object in objects! {
+//                    self.descriptions.append(object["Description"] as! String)
+//                    self.users.append(object["User"] as! String)
+//                    self.imageFiles.append(object["imageFile"] as! PFFile)
+//                    
+//                    self.tableView.reloadData()
+//                    
+//                }
+            } else {
+                // Log details of the failure
+                print(error)
+            }
+        }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
