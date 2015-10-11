@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		E40EF78B1BC5C6AD0016DB8C /* TabMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF78A1BC5C6AD0016DB8C /* TabMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E40EF78D1BC5C7AC0016DB8C /* TabPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		E40EF7941BC5CF210016DB8C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40EF7921BC5CF210016DB8C /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		E40EF7951BC5CF210016DB8C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40EF7931BC5CF210016DB8C /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		E40EF7A01BCA8CD50016DB8C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40EF79E1BCA8CD50016DB8C /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		E40EF7A11BCA8CD50016DB8C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40EF79F1BCA8CD50016DB8C /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		E40EF7A31BCA90D30016DB8C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF7A21BCA90D30016DB8C /* Cell.swift */; settings = {ASSET_TAGS = (); }; };
+		E40EF7A51BCA91AD0016DB8C /* TabFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF7A41BCA91AD0016DB8C /* TabFeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E41EA0AF1BA876AA004F9A88 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41EA0AE1BA876AA004F9A88 /* MapAnnotation.swift */; };
 		E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43BB91B1ACEE37500E47637 /* HomeViewController.swift */; };
 		E43C10001B24E35A00906B5D /* camera_large.png in Resources */ = {isa = PBXBuildFile; fileRef = E43C0FFF1B24E35A00906B5D /* camera_large.png */; };
@@ -50,8 +52,10 @@
 /* Begin PBXFileReference section */
 		E40EF78A1BC5C6AD0016DB8C /* TabMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabMapViewController.swift; sourceTree = "<group>"; };
 		E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPostViewController.swift; sourceTree = "<group>"; };
-		E40EF7921BC5CF210016DB8C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		E40EF7931BC5CF210016DB8C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E40EF79E1BCA8CD50016DB8C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		E40EF79F1BCA8CD50016DB8C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E40EF7A21BCA90D30016DB8C /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		E40EF7A41BCA91AD0016DB8C /* TabFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabFeedViewController.swift; sourceTree = "<group>"; };
 		E41EA0AE1BA876AA004F9A88 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		E43BB91B1ACEE37500E47637 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E43C0FFF1B24E35A00906B5D /* camera_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_large.png; sourceTree = "<group>"; };
@@ -91,10 +95,10 @@
 				E4ED3D6C1AC0ACA700310F5F /* CoreLocation.framework in Frameworks */,
 				E4ED3D7A1AC0ACF100310F5F /* libsqlite3.dylib in Frameworks */,
 				E4ED3D781AC0ACE600310F5F /* SystemConfiguration.framework in Frameworks */,
-				E40EF7941BC5CF210016DB8C /* Bolts.framework in Frameworks */,
+				E40EF7A01BCA8CD50016DB8C /* Bolts.framework in Frameworks */,
 				E4ED3D761AC0ACDE00310F5F /* StoreKit.framework in Frameworks */,
 				E4ED3D741AC0ACD200310F5F /* Security.framework in Frameworks */,
-				E40EF7951BC5CF210016DB8C /* Parse.framework in Frameworks */,
+				E40EF7A11BCA8CD50016DB8C /* Parse.framework in Frameworks */,
 				E4ED3D721AC0ACC800310F5F /* QuartzCore.framework in Frameworks */,
 				E4ED3D701AC0ACBC00310F5F /* MobileCoreServices.framework in Frameworks */,
 				E4ED3D6E1AC0ACB100310F5F /* libz.dylib in Frameworks */,
@@ -131,8 +135,8 @@
 				E4ED3D371AC0AB4E00310F5F /* Honours Project */,
 				E4ED3D501AC0AB4E00310F5F /* Honours ProjectTests */,
 				E4ED3D361AC0AB4E00310F5F /* Products */,
-				E40EF7921BC5CF210016DB8C /* Bolts.framework */,
-				E40EF7931BC5CF210016DB8C /* Parse.framework */,
+				E40EF79E1BCA8CD50016DB8C /* Bolts.framework */,
+				E40EF79F1BCA8CD50016DB8C /* Parse.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +158,7 @@
 				E43BB91B1ACEE37500E47637 /* HomeViewController.swift */,
 				E47F742B1B73DCF100CF6661 /* MapViewController.swift */,
 				E4ED3D411AC0AB4E00310F5F /* Main.storyboard */,
+				E40EF7A41BCA91AD0016DB8C /* TabFeedViewController.swift */,
 				E4ED3D441AC0AB4E00310F5F /* Images.xcassets */,
 				E4ED3D461AC0AB4E00310F5F /* LaunchScreen.xib */,
 				E4ED3D3C1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld */,
@@ -164,6 +169,7 @@
 				E44367211BC1875200A05564 /* UIImage+FileSize.swift */,
 				E40EF78A1BC5C6AD0016DB8C /* TabMapViewController.swift */,
 				E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */,
+				E40EF7A21BCA90D30016DB8C /* Cell.swift */,
 			);
 			path = "Honours Project";
 			sourceTree = "<group>";
@@ -304,6 +310,8 @@
 				E4ED3D401AC0AB4E00310F5F /* ViewController.swift in Sources */,
 				E4ED3D3E1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld in Sources */,
 				E4ED3D811ACDA65500310F5F /* SignUpViewController.swift in Sources */,
+				E40EF7A51BCA91AD0016DB8C /* TabFeedViewController.swift in Sources */,
+				E40EF7A31BCA90D30016DB8C /* Cell.swift in Sources */,
 				E40EF78B1BC5C6AD0016DB8C /* TabMapViewController.swift in Sources */,
 				E4ED3D3B1AC0AB4E00310F5F /* AppDelegate.swift in Sources */,
 			);
