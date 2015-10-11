@@ -36,9 +36,7 @@ class TabFeedViewController: UITableViewController {
                 // Log details of the failure
                 print(error)
             }
-        }
-
-        
+        }  
         
     }
     
@@ -80,15 +78,11 @@ class TabFeedViewController: UITableViewController {
             (imageData, error) -> Void in
             
             if error == nil {
-                
                 let image = UIImage(data: imageData!)
-                
                 cell.postedImage.image = image
-                
             }
             
         }
-
         
         return cell
     }
