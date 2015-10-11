@@ -22,7 +22,6 @@ class TabFeedViewController: UITableViewController {
         query.findObjectsInBackgroundWithBlock {
             (objects, error) -> Void in
             if error == nil {
-                print("Successfully retrieved \(objects!.count) posts.")
                 if(objects!.count > 0) {
                     for object in objects! {
                         self.users.append(object["user"] as! String)
@@ -32,7 +31,6 @@ class TabFeedViewController: UITableViewController {
                         self.tableView.reloadData()
                     }
                 }
-                print(self.users.count)
 
             } else {
                 // Log details of the failure
@@ -65,9 +63,10 @@ class TabFeedViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath) as! Cell
 
+        //cell.usernameLabel.text = descriptions[indexPath.row]
         cell.postedImage.image = UIImage(named: "camera_large.png")
-        cell.username.text = "Username"
-        cell.platform.text = "iOS"
+        cell.username.text = users[indexPath.row]
+        cell.platform.text = platforms[indexPath.row]
         cell.timestamp.text = "11/10/2015"
 
         return cell
