@@ -72,6 +72,9 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         presentViewController(logoutAlert, animated: true, completion: nil)
     }
     
+    @IBAction func refresh(sender: AnyObject) {
+        getPosts()
+    }
 
     /*
     // MARK: - Navigation

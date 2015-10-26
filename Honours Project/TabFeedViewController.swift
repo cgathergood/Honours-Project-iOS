@@ -17,7 +17,10 @@ class TabFeedViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getPosts()
+    }
+    
+    func getPosts() {
         let query = PFQuery(className:"PhotoTest")
         query.findObjectsInBackgroundWithBlock {
             (objects, error) -> Void in
@@ -31,13 +34,13 @@ class TabFeedViewController: UITableViewController {
                         self.tableView.reloadData()
                     }
                 }
-
+                
             } else {
                 // Log details of the failure
                 print(error)
             }
         }  
-        
+
     }
     
     func formatDate(parseDate: NSDate) -> String{
@@ -102,6 +105,9 @@ class TabFeedViewController: UITableViewController {
         presentViewController(logoutAlert, animated: true, completion: nil)
     }
 
+    @IBAction func refresh(sender: AnyObject) {
+        getPosts()
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
