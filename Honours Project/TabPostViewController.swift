@@ -121,6 +121,20 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         photoSelected = false;
     }
     
+    @IBAction func logout(sender: AnyObject) {
+        
+        let logoutAlert = UIAlertController(title: "Logout", message: "Are you sure you wish to logout?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        logoutAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            PFUser.logOut()
+            self.view.window?.rootViewController = self.storyboard?.instantiateInitialViewController()
+        }))
+        
+        logoutAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        presentViewController(logoutAlert, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

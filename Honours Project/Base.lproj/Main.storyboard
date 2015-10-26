@@ -293,6 +293,9 @@
                     <navigationItem key="navigationItem" id="gdN-ST-v0y">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="50z-I1-eNI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="logout:" destination="UW5-WC-7xc" id="6dc-LB-AFX"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -326,6 +329,9 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="stop" id="ila-8v-J5A">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="logout:" destination="sdJ-uz-5Yi" id="YSF-v6-vAj"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="refresh" id="JqM-1r-ZE0">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
