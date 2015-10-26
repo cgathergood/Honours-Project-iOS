@@ -393,6 +393,9 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="stop" id="x6c-Tk-bp2">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="logout:" destination="c7f-kn-dwE" id="YAr-JG-rXE"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="refresh" id="XtG-26-CAz">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
