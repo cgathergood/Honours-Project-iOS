@@ -63,7 +63,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gW1-xu-NYg" kind="presentation" modalTransitionStyle="flipHorizontal" id="Zqg-N6-t2b"/>
+                                    <segue destination="gW1-xu-NYg" kind="show" id="Zqg-N6-t2b"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5g8-l3-8e2">
@@ -147,7 +147,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="presentation" identifier="signedUp" modalTransitionStyle="flipHorizontal" id="7mz-ZW-o07"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="signedUp" id="7mz-ZW-o07"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o0K-wl-g26">
@@ -167,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAA-v7-tpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="75"/>
+            <point key="canvasLocation" x="-312" y="555"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ek5-lw-CiD">
@@ -575,6 +575,6 @@
         <image name="camera_large.png" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZoU-fn-G9a"/>
+        <segue reference="7mz-ZW-o07"/>
     </inferredMetricsTieBreakers>
 </document>
