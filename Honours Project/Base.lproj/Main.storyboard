@@ -378,7 +378,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="gdN-ST-v0y">
+                    <navigationItem key="navigationItem" title="Post" id="gdN-ST-v0y">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="50z-I1-eNI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -419,7 +419,7 @@
                             <constraint firstItem="mm9-0S-EXC" firstAttribute="bottom" secondItem="UHh-lO-LWd" secondAttribute="top" id="vMD-GW-8M1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fFM-E0-GVf">
+                    <navigationItem key="navigationItem" title="Map" id="fFM-E0-GVf">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="stop" id="ila-8v-J5A">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -579,7 +579,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nVJ-tL-tka">
+                    <navigationItem key="navigationItem" title="Feed" id="nVJ-tL-tka">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="stop" id="x6c-Tk-bp2">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

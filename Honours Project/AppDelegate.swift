@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.setApplicationId("nFHu3bnj37q5vzWkItvJutUFOPMLwjC1HbiiAXiC", clientKey: "TO9nrLJAi0w7X9pipEMjf1XgftWgfkAnuKkdhq6e")
         
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
         return true
     }
 
