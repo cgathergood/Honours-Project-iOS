@@ -18,6 +18,10 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     override func viewDidLoad() {
         
+        super.viewDidLoad()
+        
+        self.map.delegate = self
+        
         map.showsUserLocation = true
         
         //Setting up the locationManager
@@ -27,10 +31,6 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         locationManager.startUpdatingLocation()
         
         getPosts();
-        
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +40,7 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func getPosts() {
         let query = PFQuery(className:"PhotoTest")
+        query.limit = 1
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             print(objects?.count)
             if(objects?.count > 0) {
@@ -47,11 +48,16 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                     let post = object
                     let user = post["user"] as! String
                     let platform = post["platform"] as! String
+                    let image = post["image"] as! PFFile
                     let titleText = user + ", " + platform
-                    let annotation = MapAnnotation(title: titleText,
-                        coordinate: CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue))
                     
-                    self.map.addAnnotation(annotation)
+                    let customAnnotation = CustomMapAnnotation()
+                    customAnnotation.title = titleText
+                    customAnnotation.coordinate = CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue)
+                    customAnnotation.userImage = image
+                    
+                    
+                    self.map.addAnnotation(customAnnotation)
                 }
             }
         }
@@ -74,6 +80,46 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     @IBAction func refresh(sender: AnyObject) {
         getPosts()
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if !(annotation is CustomMapAnnotation){
+            return nil
+        }
+        
+        let reuseId = "test"
+        
+        var customView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if customView == nil {
+            customView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            customView?.canShowCallout = true
+            customView?.image = UIImage(named: "")
+        } else {
+            customView?.annotation = annotation
+        }
+        
+        let customPointAnnotation = annotation as! CustomMapAnnotation
+        
+        let imageView = UIImageView(frame: CGRectMake(0, 0, 30, 30))
+        imageView.layer.masksToBounds = true
+        
+        customPointAnnotation.userImage.getDataInBackgroundWithBlock{
+            (imageData, error) -> Void in
+            
+            if error == nil {
+                let image = UIImage(data: imageData!)
+                imageView.image = image
+                customView?.leftCalloutAccessoryView = imageView
+            }
+            
+        }
+        
+        return customView
+    }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        
     }
 
     /*
