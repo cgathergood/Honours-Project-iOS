@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
+    
     @IBOutlet weak var map: MKMapView!
     
     var locationManager = CLLocationManager()
@@ -32,7 +32,7 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         getPosts();
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,7 +40,6 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func getPosts() {
         let query = PFQuery(className:"PhotoTest")
-        query.limit = 1
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             print(objects?.count)
             if(objects?.count > 0) {
@@ -62,7 +61,7 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             }
         }
     }
-
+    
     @IBAction func logout(sender: AnyObject) {
         
         let logoutAlert = UIAlertController(title: "Logout", message: "Are you sure you wish to logout?", preferredStyle: UIAlertControllerStyle.Alert)
@@ -84,52 +83,57 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
-        if !(annotation is CustomMapAnnotation){
-            return nil
-        }
-        
-        let reuseId = "test"
-        
-        var customView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
-        if customView == nil {
-            customView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            customView?.canShowCallout = true
-            customView?.image = UIImage(named: "")
-        } else {
-            customView?.annotation = annotation
-        }
-        
-        let customPointAnnotation = annotation as! CustomMapAnnotation
-        
-        let imageView = UIImageView(frame: CGRectMake(0, 0, 30, 30))
-        imageView.layer.masksToBounds = true
-        
-        customPointAnnotation.userImage.getDataInBackgroundWithBlock{
-            (imageData, error) -> Void in
+        if let annotation = annotation as? CustomMapAnnotation
+        {
+            let identifier = annotation.description
+            var view = MKPinAnnotationView()
             
-            if error == nil {
-                let image = UIImage(data: imageData!)
-                imageView.image = image
-                customView?.leftCalloutAccessoryView = imageView
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as! MKPinAnnotationView!
+            {
+                view = dequeuedView
+                view.annotation = annotation
             }
-            
+            else
+            {
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.animatesDrop = true
+                view.canShowCallout = true
+                
+                if(annotation.title!.containsString("Android")){
+                    view.pinTintColor = UIColor.greenColor()
+                } else {
+                    view.pinTintColor = UIColor.blueColor()
+                }
+                
+                
+                let imageView = UIImageView(frame: CGRectMake(0, 0, 50, 50))
+                imageView.layer.masksToBounds = true
+                
+                annotation.userImage.getDataInBackgroundWithBlock{
+                    (imageData, error) -> Void in
+                    
+                    if error == nil {
+                        let image = UIImage(data: imageData!)
+                        imageView.image = image
+                        view.leftCalloutAccessoryView = imageView
+                    }
+                }
+                
+            }
+            return view
         }
+        return nil
         
-        return customView
     }
     
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        
-    }
-
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
