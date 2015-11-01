@@ -40,7 +40,7 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func getPosts() {
         let query = PFQuery(className:"PhotoTest")
-        //query.limit = 1
+        query.limit = 1
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             print(objects?.count)
             if(objects?.count > 0) {
@@ -83,7 +83,6 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        print("New method start")
         
         if !(annotation is CustomMapAnnotation){
             return nil
@@ -95,18 +94,23 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         if customView == nil {
             customView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             customView?.canShowCallout = true
+            customView?.image = UIImage(named: "")
         } else {
             customView?.annotation = annotation
         }
         
         let customPointAnnotation = annotation as! CustomMapAnnotation
         
+        let imageView = UIImageView(frame: CGRectMake(0, 0, 30, 30))
+        imageView.layer.masksToBounds = true
+        
         customPointAnnotation.userImage.getDataInBackgroundWithBlock{
             (imageData, error) -> Void in
             
             if error == nil {
                 let image = UIImage(data: imageData!)
-                customView!.image = image
+                imageView.image = image
+                customView?.leftCalloutAccessoryView = imageView
             }
             
         }
@@ -114,6 +118,9 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         return customView
     }
     
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        
+    }
 
     /*
     // MARK: - Navigation
