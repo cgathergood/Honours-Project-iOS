@@ -18,6 +18,10 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     override func viewDidLoad() {
         
+        super.viewDidLoad()
+        
+        self.map.delegate = self
+        
         map.showsUserLocation = true
         
         //Setting up the locationManager
@@ -27,10 +31,6 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         locationManager.startUpdatingLocation()
         
         getPosts();
-        
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +40,7 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func getPosts() {
         let query = PFQuery(className:"PhotoTest")
-        query.limit = 1
+        //query.limit = 1
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             print(objects?.count)
             if(objects?.count > 0) {
@@ -81,6 +81,39 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     @IBAction func refresh(sender: AnyObject) {
         getPosts()
     }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        print("New method start")
+        
+        if !(annotation is CustomMapAnnotation){
+            return nil
+        }
+        
+        let reuseId = "test"
+        
+        var customView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if customView == nil {
+            customView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            customView?.canShowCallout = true
+        } else {
+            customView?.annotation = annotation
+        }
+        
+        let customPointAnnotation = annotation as! CustomMapAnnotation
+        
+        customPointAnnotation.userImage.getDataInBackgroundWithBlock{
+            (imageData, error) -> Void in
+            
+            if error == nil {
+                let image = UIImage(data: imageData!)
+                customView!.image = image
+            }
+            
+        }
+        
+        return customView
+    }
+    
 
     /*
     // MARK: - Navigation
