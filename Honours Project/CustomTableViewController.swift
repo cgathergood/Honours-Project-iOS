@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomTableViewController: PFQueryTableViewController {
-
+    
     // Initialise the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!) {
         super.init(style: style, className: className)
@@ -68,6 +68,23 @@ class CustomTableViewController: PFQueryTableViewController {
         let dateString = dateFormatter.stringFromDate(parseDate)
         return dateString
     }
+    
+    @IBAction func refershPosts(sender: AnyObject) {
+        self.loadObjects()
+    }
 
+    @IBAction func logout(sender: AnyObject) {
+        let logoutAlert = UIAlertController(title: "Logout", message: "Are you sure you wish to logout?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        logoutAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            PFUser.logOut()
+            self.view.window?.rootViewController = self.storyboard?.instantiateInitialViewController()
+        }))
+        
+        logoutAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        presentViewController(logoutAlert, animated: true, completion: nil)
+    }
     
 }

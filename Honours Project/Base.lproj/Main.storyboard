@@ -496,13 +496,13 @@
                             <barButtonItem systemItem="stop" id="x6c-Tk-bp2">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="logout:" destination="c7f-kn-dwE" id="YAr-JG-rXE"/>
+                                    <action selector="logout:" destination="c7f-kn-dwE" id="ZpE-zS-cS8"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="refresh" id="XtG-26-CAz">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="refresh:" destination="c7f-kn-dwE" id="Wq3-F9-u8d"/>
+                                    <action selector="refershPosts:" destination="c7f-kn-dwE" id="tYf-rh-GY9"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
