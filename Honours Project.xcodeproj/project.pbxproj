@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E40EF78B1BC5C6AD0016DB8C /* TabMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF78A1BC5C6AD0016DB8C /* TabMapViewController.swift */; };
 		E40EF78D1BC5C7AC0016DB8C /* TabPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */; };
-		E40EF7A31BCA90D30016DB8C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF7A21BCA90D30016DB8C /* Cell.swift */; };
 		E40EF7A51BCA91AD0016DB8C /* TabFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF7A41BCA91AD0016DB8C /* TabFeedViewController.swift */; };
 		E43C10001B24E35A00906B5D /* camera_large.png in Resources */ = {isa = PBXBuildFile; fileRef = E43C0FFF1B24E35A00906B5D /* camera_large.png */; };
 		E44367221BC1875200A05564 /* UIImage+FileSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44367211BC1875200A05564 /* UIImage+FileSize.swift */; };
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		E40EF78A1BC5C6AD0016DB8C /* TabMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabMapViewController.swift; sourceTree = "<group>"; };
 		E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPostViewController.swift; sourceTree = "<group>"; };
-		E40EF7A21BCA90D30016DB8C /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		E40EF7A41BCA91AD0016DB8C /* TabFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabFeedViewController.swift; sourceTree = "<group>"; };
 		E43C0FFF1B24E35A00906B5D /* camera_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_large.png; sourceTree = "<group>"; };
 		E44367211BC1875200A05564 /* UIImage+FileSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FileSize.swift"; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 				E44367211BC1875200A05564 /* UIImage+FileSize.swift */,
 				E40EF78A1BC5C6AD0016DB8C /* TabMapViewController.swift */,
 				E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */,
-				E40EF7A21BCA90D30016DB8C /* Cell.swift */,
 				E45714151BE67796000E219A /* CustomMapAnnotation.swift */,
 				E45714191BE6C095000E219A /* CustomCell.swift */,
 			);
@@ -310,7 +307,6 @@
 				E4ED3D3E1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld in Sources */,
 				E4ED3D811ACDA65500310F5F /* SignUpViewController.swift in Sources */,
 				E40EF7A51BCA91AD0016DB8C /* TabFeedViewController.swift in Sources */,
-				E40EF7A31BCA90D30016DB8C /* Cell.swift in Sources */,
 				E40EF78B1BC5C6AD0016DB8C /* TabMapViewController.swift in Sources */,
 				E45714161BE67796000E219A /* CustomMapAnnotation.swift in Sources */,
 				E4ED3D3B1AC0AB4E00310F5F /* AppDelegate.swift in Sources */,

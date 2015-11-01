@@ -9,5 +9,8 @@
 import UIKit
 
 class CustomClass: PFTableViewCell {
-    
+    @IBOutlet weak var postedImage: PFImageView!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var platform: UILabel!
+    @IBOutlet weak var timestamp: UILabel!
 }
