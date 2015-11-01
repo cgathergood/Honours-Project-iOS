@@ -359,7 +359,7 @@
         <!--Feed-->
         <scene sceneID="GSt-sM-F1z">
             <objects>
-                <viewController title="Feed" id="c7f-kn-dwE" customClass="TabFeedViewController" customModule="InstaMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Feed" id="c7f-kn-dwE" customClass="CustomTableViewController" customModule="InstaMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="256" sectionHeaderHeight="28" sectionFooterHeight="28" id="zlT-KH-aAM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -390,7 +390,7 @@
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oeM-OR-rBg">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="174"/>
                                                                                     <subviews>
-                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9B4-EW-mEs">
+                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9B4-EW-mEs" customClass="PFImageView">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="174"/>
                                                                                         </imageView>
                                                                                     </subviews>
@@ -483,10 +483,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="platform" destination="aQj-bq-2lk" id="uy8-jA-Ofk"/>
-                                    <outlet property="postedImage" destination="9B4-EW-mEs" id="L3K-rl-ze5"/>
-                                    <outlet property="timestamp" destination="O73-Wt-r7b" id="J40-T7-Iug"/>
-                                    <outlet property="username" destination="iT8-EN-TdK" id="0io-zN-WeF"/>
+                                    <outlet property="platform" destination="aQj-bq-2lk" id="kxn-TC-tki"/>
+                                    <outlet property="postedImage" destination="9B4-EW-mEs" id="5t8-04-Wxb"/>
+                                    <outlet property="timestamp" destination="O73-Wt-r7b" id="apO-2n-Gna"/>
+                                    <outlet property="username" destination="iT8-EN-TdK" id="co6-Ks-Hqw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

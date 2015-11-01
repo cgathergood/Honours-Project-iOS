@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomClass: PFTableViewCell {
+class CustomCell: PFTableViewCell {
     @IBOutlet weak var postedImage: PFImageView!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var platform: UILabel!

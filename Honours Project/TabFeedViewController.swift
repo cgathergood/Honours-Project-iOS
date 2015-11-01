@@ -68,27 +68,27 @@ class TabFeedViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath) as! Cell
-
-        cell.postedImage.image = UIImage(named: "camera_large.png")
-        cell.username.text = users[indexPath.row]
-        cell.platform.text = platforms[indexPath.row]
-        cell.timestamp.text = timestamps[indexPath.row]
-
-        
-        imageFiles[indexPath.row].getDataInBackgroundWithBlock{
-            (imageData, error) -> Void in
-            
-            if error == nil {
-                let image = UIImage(data: imageData!)
-                cell.postedImage.image = image
-            }
-            
-        }
-        
-        return cell
-    }
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath) as! Cell
+//
+//        cell.postedImage.image = UIImage(named: "camera_large.png")
+//        cell.username.text = users[indexPath.row]
+//        cell.platform.text = platforms[indexPath.row]
+//        cell.timestamp.text = timestamps[indexPath.row]
+//
+//        
+//        imageFiles[indexPath.row].getDataInBackgroundWithBlock{
+//            (imageData, error) -> Void in
+//            
+//            if error == nil {
+//                let image = UIImage(data: imageData!)
+//                cell.postedImage.image = image
+//            }
+//            
+//        }
+//        
+//        return cell
+//    }
     
     @IBAction func logout(sender: AnyObject) {
         
