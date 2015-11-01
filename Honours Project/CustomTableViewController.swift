@@ -22,7 +22,8 @@ class CustomTableViewController: PFQueryTableViewController {
         self.parseClassName = "PhotoTest"
         self.textKey = "user"
         self.pullToRefreshEnabled = true
-        self.paginationEnabled = false
+        self.paginationEnabled = true
+        self.objectsPerPage = 15
     }
     
     // Define the query that will provide the data for the table view
@@ -30,5 +31,43 @@ class CustomTableViewController: PFQueryTableViewController {
         let query = PFQuery(className: "PhotoTest")
         return query
     }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("customCell") as! CustomCell!
+        if cell == nil {
+            cell = CustomCell(style: UITableViewCellStyle.Default, reuseIdentifier: "customCell")
+        }
+        
+        if let user = object?["user"] as? String {
+            cell?.username?.text = user
+        }
+        
+        if let platform = object?["platform"] as? String {
+            cell?.platform?.text = platform
+        }
+        
+        cell?.timestamp?.text = formatDate((object?.createdAt)!)
+        
+        
+        
+        let userImage = UIImage(named: "image")
+        cell.postedImage!.image = userImage
+        if let thumbnail = object?["image"] as? PFFile {
+            cell.postedImage!.file = thumbnail
+            cell.postedImage!.loadInBackground()
+        }
+        
+        return cell
+        
+    }
+    
+    func formatDate(parseDate: NSDate) -> String{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "E MMM d hh:mm"
+        let dateString = dateFormatter.stringFromDate(parseDate)
+        return dateString
+    }
+
     
 }
