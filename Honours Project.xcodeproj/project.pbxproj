@@ -11,13 +11,11 @@
 		E40EF78D1BC5C7AC0016DB8C /* TabPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */; };
 		E40EF7A31BCA90D30016DB8C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF7A21BCA90D30016DB8C /* Cell.swift */; };
 		E40EF7A51BCA91AD0016DB8C /* TabFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EF7A41BCA91AD0016DB8C /* TabFeedViewController.swift */; };
-		E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43BB91B1ACEE37500E47637 /* HomeViewController.swift */; };
 		E43C10001B24E35A00906B5D /* camera_large.png in Resources */ = {isa = PBXBuildFile; fileRef = E43C0FFF1B24E35A00906B5D /* camera_large.png */; };
 		E44367221BC1875200A05564 /* UIImage+FileSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44367211BC1875200A05564 /* UIImage+FileSize.swift */; };
 		E45714131BE2D3B2000E219A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45714111BE2D3B2000E219A /* Bolts.framework */; };
 		E45714141BE2D3B2000E219A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45714121BE2D3B2000E219A /* Parse.framework */; };
 		E45714161BE67796000E219A /* CustomMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45714151BE67796000E219A /* CustomMapAnnotation.swift */; };
-		E47F742C1B73DCF100CF6661 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47F742B1B73DCF100CF6661 /* MapViewController.swift */; };
 		E4ED3D3B1AC0AB4E00310F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */; };
 		E4ED3D3E1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3C1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld */; };
 		E4ED3D401AC0AB4E00310F5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ED3D3F1AC0AB4E00310F5F /* ViewController.swift */; };
@@ -54,13 +52,11 @@
 		E40EF78C1BC5C7AC0016DB8C /* TabPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPostViewController.swift; sourceTree = "<group>"; };
 		E40EF7A21BCA90D30016DB8C /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		E40EF7A41BCA91AD0016DB8C /* TabFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabFeedViewController.swift; sourceTree = "<group>"; };
-		E43BB91B1ACEE37500E47637 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E43C0FFF1B24E35A00906B5D /* camera_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_large.png; sourceTree = "<group>"; };
 		E44367211BC1875200A05564 /* UIImage+FileSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FileSize.swift"; sourceTree = "<group>"; };
 		E45714111BE2D3B2000E219A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E45714121BE2D3B2000E219A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E45714151BE67796000E219A /* CustomMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapAnnotation.swift; sourceTree = "<group>"; };
-		E47F742B1B73DCF100CF6661 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E4ED3D351AC0AB4E00310F5F /* InstaMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ED3D391AC0AB4E00310F5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,8 +151,6 @@
 				E4ED3D3A1AC0AB4E00310F5F /* AppDelegate.swift */,
 				E4ED3D3F1AC0AB4E00310F5F /* ViewController.swift */,
 				E4ED3D801ACDA65500310F5F /* SignUpViewController.swift */,
-				E43BB91B1ACEE37500E47637 /* HomeViewController.swift */,
-				E47F742B1B73DCF100CF6661 /* MapViewController.swift */,
 				E4ED3D411AC0AB4E00310F5F /* Main.storyboard */,
 				E40EF7A41BCA91AD0016DB8C /* TabFeedViewController.swift */,
 				E4ED3D441AC0AB4E00310F5F /* Images.xcassets */,
@@ -303,9 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44367221BC1875200A05564 /* UIImage+FileSize.swift in Sources */,
-				E43BB91C1ACEE37500E47637 /* HomeViewController.swift in Sources */,
 				E40EF78D1BC5C7AC0016DB8C /* TabPostViewController.swift in Sources */,
-				E47F742C1B73DCF100CF6661 /* MapViewController.swift in Sources */,
 				E4ED3D401AC0AB4E00310F5F /* ViewController.swift in Sources */,
 				E4ED3D3E1AC0AB4E00310F5F /* Honours_Project.xcdatamodeld in Sources */,
 				E4ED3D811ACDA65500310F5F /* SignUpViewController.swift in Sources */,

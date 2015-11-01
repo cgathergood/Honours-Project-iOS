@@ -109,12 +109,12 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="euI-At-pEL"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="password" destination="mfY-wt-Pyr" id="v0j-3s-4qX"/>
                         <outlet property="username" destination="RXY-aS-0Up" id="EfQ-wv-BpM"/>
-                        <segue destination="1S5-Df-udV" kind="presentation" identifier="login_to_home" id="hdW-6o-qru"/>
                         <segue destination="8qA-pb-aIa" kind="show" identifier="login_to_tab" id="XId-Kn-Mis"/>
                     </connections>
                 </viewController>
@@ -190,7 +190,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="presentation" identifier="signedUp" modalTransitionStyle="flipHorizontal" id="7mz-ZW-o07"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="signedUp" id="7mz-ZW-o07"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o0K-wl-g26">
@@ -240,94 +240,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAA-v7-tpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-312" y="555"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="ek5-lw-CiD">
-            <objects>
-                <viewController id="bhF-ZB-Yin" customClass="HomeViewController" customModule="InstaMap" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UDe-Vi-WED"/>
-                        <viewControllerLayoutGuide type="bottom" id="J92-VW-SW5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RPz-G9-rS7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eui-LH-0ys">
-                                <rect key="frame" x="16" y="72" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txd-co-0L6">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem title="Logout" id="731-CY-YBK">
-                                        <connections>
-                                            <action selector="logout:" destination="bhF-ZB-Yin" id="ouM-0N-XU5"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_large.png" translatesAutoresizingMaskIntoConstraints="NO" id="9IG-Tg-boo">
-                                <rect key="frame" x="16" y="101" width="288" height="238"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mp-Fq-Cl8">
-                                <rect key="frame" x="116" y="347" width="88" height="30"/>
-                                <state key="normal" title="Select Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getPhoto:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="z1F-u8-749"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYv-OM-HZN">
-                                <rect key="frame" x="89" y="390" width="32" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="GPS"/>
-                                <connections>
-                                    <action selector="gpsButton:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="qKa-Ea-Vxr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxQ-uU-Cvv">
-                                <rect key="frame" x="131" y="390" width="46" height="30"/>
-                                <state key="normal" title="Post">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="postUpload:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="PAK-QV-0Dr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5S-8n-A2X">
-                                <rect key="frame" x="185" y="390" width="46" height="30"/>
-                                <state key="normal" title="Map">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="MapButton:" destination="bhF-ZB-Yin" eventType="touchUpInside" id="5dx-w5-lPa"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="txd-co-0L6" firstAttribute="leading" secondItem="RPz-G9-rS7" secondAttribute="leadingMargin" constant="-16" id="0yx-LP-5Nu"/>
-                            <constraint firstItem="J92-VW-SW5" firstAttribute="top" secondItem="txd-co-0L6" secondAttribute="bottom" id="1x3-K8-a7e"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="txd-co-0L6" secondAttribute="trailing" constant="-16" id="8gx-pv-ZIN"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="VFE-7A-46p"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="photoView" destination="9IG-Tg-boo" id="hDK-Aa-tsk"/>
-                        <outlet property="welcomeLabel" destination="Eui-LH-0ys" id="jdY-j0-bRx"/>
-                        <segue destination="vXZ-lx-hvc" kind="show" identifier="logout" id="ZoU-fn-G9a"/>
-                        <segue destination="zti-nk-oYF" kind="show" identifier="map" id="D1s-kF-HlJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hyw-aI-1lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="843"/>
         </scene>
         <!--Post-->
         <scene sceneID="X62-hY-Pdl">
@@ -627,67 +539,6 @@
             </objects>
             <point key="canvasLocation" x="1194" y="56"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="fOt-og-UXk">
-            <objects>
-                <viewController id="zti-nk-oYF" customClass="MapViewController" customModule="InstaMap" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="B0f-Dd-W2J"/>
-                        <viewControllerLayoutGuide type="bottom" id="yRY-Ev-5id"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hLv-FX-gJU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cO-QC-Wbq">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem title="Find Me!" id="zNI-34-zeY">
-                                        <connections>
-                                            <action selector="zoomIn:" destination="zti-nk-oYF" id="ULx-k5-Ktr"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y4J-fh-WEz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="map" destination="y4J-fh-WEz" id="4IE-Eb-ql0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tTS-w4-sI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1215" y="843"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="U11-Tq-p72">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1S5-Df-udV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IBM-e1-0ph">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="fxP-aw-UHW">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="bhF-ZB-Yin" kind="relationship" relationship="rootViewController" id="khW-Iv-Y4i"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ugM-a1-iJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="178" y="843"/>
-        </scene>
         <!--Feed-->
         <scene sceneID="24O-7n-YWq">
             <objects>
@@ -755,7 +606,4 @@
         <image name="Map Marker-32" width="32" height="32"/>
         <image name="camera_large.png" width="500" height="500"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="7mz-ZW-o07"/>
-    </inferredMetricsTieBreakers>
 </document>
