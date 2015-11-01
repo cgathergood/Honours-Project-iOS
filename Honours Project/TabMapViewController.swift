@@ -40,6 +40,7 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func getPosts() {
         let query = PFQuery(className:"PhotoTest")
+        query.limit = 1
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             print(objects?.count)
             if(objects?.count > 0) {
@@ -47,6 +48,7 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                     let post = object
                     let user = post["user"] as! String
                     let platform = post["platform"] as! String
+                    let image = post["image"] as! PFFile
                     let titleText = user + ", " + platform
                     let annotation = MapAnnotation(title: titleText,
                         coordinate: CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue))
