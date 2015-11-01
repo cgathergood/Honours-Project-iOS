@@ -10,6 +10,8 @@ import UIKit
 
 class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     @IBOutlet weak var imageView: UIImageView!
     var locationManager = CLLocationManager();
     var photoSelected:Bool = false
@@ -25,7 +27,7 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -81,6 +83,18 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
             if (photoSelected == false){
                 displayAlert("Image Required", message: "Please select an Image.")
             } else {
+                
+                //Indicator
+                activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+                activityIndicator.center = self.view.center
+                activityIndicator.hidesWhenStopped = true
+                activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+                activityIndicator.backgroundColor = UIColor.grayColor()
+                view.addSubview(activityIndicator)
+                activityIndicator.startAnimating()
+                UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+                
+                //Post
                 let post = PFObject(className: "PhotoTest")
                 post["user"] = PFUser.currentUser()?.username
                 post["lat"] = locationManager.location!.coordinate.latitude
@@ -95,13 +109,17 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
                     if (success) {
                         self.displayAlert("Success", message: "Your post was uploaded successfully")
                         self.resetAfterPost()
+                        self.activityIndicator.stopAnimating()
+                        UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     } else {
                         self.displayAlert("Failure", message: "Your post was uploaded unsuccessfully, please try again.")
+                        self.activityIndicator.stopAnimating()
+                        UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     }
                 })
             }
         }
-
+        
     }
     
     func displayAlert(title:String, message:String){
@@ -135,15 +153,15 @@ class TabPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         presentViewController(logoutAlert, animated: true, completion: nil)
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

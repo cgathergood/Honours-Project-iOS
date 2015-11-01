@@ -29,7 +29,8 @@ class ViewController: UIViewController {
             activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
             activityIndicator.center = self.view.center
             activityIndicator.hidesWhenStopped = true
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+            activityIndicator.backgroundColor = UIColor.grayColor()
             view.addSubview(activityIndicator)
             activityIndicator.startAnimating()
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()
