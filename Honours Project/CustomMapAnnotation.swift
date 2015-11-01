@@ -8,6 +8,6 @@
 
 import MapKit
 
-class CustomMapAnnotation: MKAnnotationView {
+class CustomMapAnnotation: MKPointAnnotation {
     var userImage : PFFile!
 }

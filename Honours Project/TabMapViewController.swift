@@ -50,10 +50,14 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                     let platform = post["platform"] as! String
                     let image = post["image"] as! PFFile
                     let titleText = user + ", " + platform
-                    let annotation = MapAnnotation(title: titleText,
-                        coordinate: CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue))
                     
-                    self.map.addAnnotation(annotation)
+                    let customAnnotation = CustomMapAnnotation()
+                    customAnnotation.title = titleText
+                    customAnnotation.coordinate = CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue)
+                    customAnnotation.userImage = image
+                    
+                    
+                    self.map.addAnnotation(customAnnotation)
                 }
             }
         }

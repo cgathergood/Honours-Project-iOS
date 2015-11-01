@@ -53,10 +53,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     let user = post["user"] as! String
                     let platform = post["platform"] as! String
                     let titleText = user + ", " + platform
-                    let annotation = MapAnnotation(title: titleText,
-                        coordinate: CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue))
+                    //let annotation = MapAnnotation(title: titleText,
+                     //   coordinate: CLLocationCoordinate2D(latitude: post["lat"]!.doubleValue, longitude: post["lon"]!.doubleValue))
                     
-                    self.map.addAnnotation(annotation)
+                    //self.map.addAnnotation(annotation)
                 }
             }
         }
