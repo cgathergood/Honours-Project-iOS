@@ -40,7 +40,6 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func getPosts() {
         let query = PFQuery(className:"PhotoTest")
-        query.limit = 1
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             print(objects?.count)
             if(objects?.count > 0) {
@@ -92,9 +91,8 @@ class TabMapViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         var customView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if customView == nil {
-            customView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            customView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             customView?.canShowCallout = true
-            customView?.image = UIImage(named: "")
         } else {
             customView?.annotation = annotation
         }
